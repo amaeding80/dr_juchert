@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. med. Natascha Juchert – Hausarztpraxis Forstenried</title>
+  <meta name="description" content="Ihre Hausarztpraxis in München-Forstenried. Drei Ärztinnen, sieben Sprachen, Hebamme & Podologin – digital, barrierefrei, immer erreichbar." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <!-- Google Fonts werden nur nach Cookie-Einwilligung geladen (DSGVO §25 TDDDG) -->
+  <script>(function(){try{var d=localStorage.getItem('drj_cookie_consent');if(d){var p=JSON.parse(d);if(p.komfort){var l=document.createElement('link');l.rel='preconnect';l.href='https://fonts.googleapis.com';document.head.appendChild(l);var f=document.createElement('link');f.id='gf-link';f.rel='stylesheet';f.href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap';document.head.appendChild(f);}}}catch(e){}}());</script>
+  <style>
+    :root {
+      /* Primärfarbe: dunkler Terrakotta — besteht WCAG AA (7.6:1 auf Weiß) */
+      --rust:      #8B3E22;
+      --rust-lt:   #A64E2F;
+      --rust-dark: #6B2E16;
+      --rust-pale: #FAE8DF;
+      /* Hintergründe */
+      --warm:      #FDFAF6;
+      --sand:      #EDD8C3;
+      /* Salbeigrün — psychologisch beruhigend, steht für Heilung & Balance */
+      --sage:      #5A8560;
+      --sage-pale: #EBF4EC;
+      /* Typografie: tiefes Navy-Anthrazit für Überschriften → ärztliche Autorität */
+      --ink:       #0E1C2F;
+      --dark:      #1C0F08;
+      --txt:       #3B2518;
+      --txt-mid:   #7A5A4A;
+      --txt-light: #B09080;
+      --white:     #FFFFFF;
+      --rule:      rgba(60,25,10,0.08);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 64px; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--warm); color: var(--txt); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ── NOTICE ── */
+    .notice { background: #fffbea; border-bottom: 1px solid #f0df80; padding: 12px 48px 12px 20px; font-size: 0.83rem; color: #7a5f00; display: flex; align-items: flex-start; gap: 10px; position: relative; }
+    .notice svg { flex-shrink: 0; margin-top: 3px; }
+    .notice-close { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.2rem; color: #a07800; cursor: pointer; padding: 4px 8px; }
+    .notice-lines { display: flex; flex-direction: column; gap: 5px; }
+    .notice-line-sep { border-top: 1px solid #e8d060; margin: 2px 0; }
+    .notice-email { color: #5a3e00; font-weight: 500; }
+
+    /* ── NAV ── */
+    nav { position: sticky; top: 0; z-index: 200; background: var(--white); border-bottom: 1px solid var(--rule); height: 64px; display: flex; align-items: center; padding: 0 40px; justify-content: space-between; box-shadow: 0 1px 12px rgba(0,0,0,0.04); }
+    .nav-brand { text-decoration: none; }
+    .nav-name { font-size: 0.92rem; font-weight: 800; color: var(--dark); line-height: 1.2; display: block; }
+    .nav-sub  { font-size: 0.68rem; color: var(--txt-mid); display: block; }
+    .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--txt-mid); text-decoration: none; font-size: 0.84rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-cta { background: var(--rust) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 100px; font-weight: 700 !important; font-size: 0.83rem !important; transition: background .2s !important; }
+    .nav-cta:hover { background: var(--rust-dark) !important; }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
+    .burger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; display: block; }
+    .mob-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 199; flex-direction: column; padding: 24px; gap: 2px; overflow-y: auto; }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { color: var(--txt); text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .mob-cta-m { margin-top: 20px !important; background: var(--rust) !important; color: white !important; text-align: center !important; padding: 15px !important; border-radius: 100px !important; border: none !important; font-weight: 700 !important; }
+
+    /* ── HERO ── */
+    .hero { background: var(--warm); display: grid; grid-template-columns: 56% 44%; min-height: 580px; }
+    .hero-left { padding: 72px 48px 72px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--rust); font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; }
+    .hero-tag::before { content: ''; width: 20px; height: 2px; background: var(--rust); border-radius: 2px; }
+    .hero h1 { font-size: 2.7rem; font-weight: 800; color: var(--ink); line-height: 1.12; margin-bottom: 22px; }
+    .hero h1 span { color: var(--rust); }
+    .hero-lead { font-size: 1rem; color: var(--txt-mid); line-height: 1.85; margin-bottom: 34px; max-width: 440px; }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 44px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--rust); color: var(--white); padding: 13px 26px; border-radius: 100px; text-decoration: none; font-size: 0.88rem; font-weight: 700; transition: background .2s, transform .15s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--rust-dark); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: var(--white); border: 1.5px solid var(--rule); color: var(--txt); padding: 13px 26px; border-radius: 100px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: all .2s; white-space: nowrap; }
+    .btn-secondary:hover { border-color: var(--rust); color: var(--rust); }
+    .hero-stats { display: flex; gap: 32px; }
+    .hs-num { font-size: 2rem; font-weight: 800; color: var(--rust); line-height: 1; display: block; }
+    .hs-label { font-size: 0.71rem; color: var(--txt-mid); font-weight: 500; margin-top: 3px; display: block; }
+
+    /* Hero Right – Portrait Frame */
+    .hero-right { display: flex; align-items: center; justify-content: center; padding: 48px 40px 48px 16px; }
+    .hero-portrait-wrap { position: relative; }
+    .hero-portrait { width: 300px; height: 400px; border-radius: 20px; object-fit: cover; object-position: center top; display: block; box-shadow: 0 0 60px 18px rgba(210,168,130,0.28), 0 0 120px 40px rgba(250,228,200,0.15), 0 20px 56px rgba(100,50,20,0.12); filter: none; }
+    .hero-chip { position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); background: var(--white); border-radius: 100px; padding: 10px 18px; box-shadow: 0 8px 28px rgba(0,0,0,0.1); white-space: nowrap; font-size: 0.78rem; font-weight: 600; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+    .hero-chip-dot { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; flex-shrink: 0; }
+
+    /* ── SERVICE STRIP ── */
+    .service-strip { background: var(--rust); padding: 0 40px; }
+    .service-strip-inner { display: flex; align-items: center; justify-content: center; max-width: 840px; margin: 0 auto; }
+    .ss-item { display: flex; align-items: center; gap: 12px; padding: 18px 32px; text-decoration: none; color: var(--white); flex: 1; justify-content: center; transition: background .2s; }
+    .ss-item:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.18); }
+    .ss-item:hover { background: rgba(255,255,255,0.09); }
+    .ss-icon-sm { width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ss-label { font-size: 0.86rem; font-weight: 700; }
+    .ss-arrow { margin-left: 8px; opacity: 0.5; }
+
+    /* ── LANGUAGES – Salbeigrün-Band ── */
+    .lang-section { background: var(--sage-pale); padding: 52px 40px; border-top: 1px solid rgba(40,80,45,0.1); border-bottom: 1px solid rgba(40,80,45,0.1); overflow: hidden; position: relative; }
+    .lang-inner { display: flex; align-items: center; gap: 40px; max-width: 1000px; }
+    .lang-statement { flex-shrink: 0; }
+    .lang-headline { font-size: 1.45rem; font-weight: 800; color: var(--ink); line-height: 1.15; }
+    .lang-headline span { color: var(--sage); }
+    .lang-subline { font-size: 0.76rem; color: var(--txt-mid); margin-top: 3px; font-weight: 500; }
+    .lang-divider { width: 1px; height: 44px; background: rgba(40,80,45,0.15); flex-shrink: 0; }
+    .lang-names { display: flex; flex-wrap: wrap; align-items: center; }
+    .lang-item { font-size: 0.92rem; font-weight: 600; color: var(--txt); padding: 6px 18px; border-right: 1px solid rgba(40,80,45,0.12); cursor: default; position: relative; overflow: hidden; transition: color .22s; }
+    .lang-item:last-child { border-right: none; }
+    .lang-item::after { content: ''; position: absolute; bottom: 4px; left: 18px; right: 18px; height: 1.5px; background: var(--sage); transform: scaleX(0); transform-origin: left center; transition: transform .28s ease; }
+    .lang-item:hover { color: var(--sage); }
+    .lang-item:hover::after { transform: scaleX(1); }
+    /* Wasserzeichen */
+    .lang-bg-num { position: absolute; right: 32px; top: 50%; transform: translateY(-50%); font-size: 9rem; font-weight: 800; color: var(--sage); opacity: 0.07; line-height: 1; pointer-events: none; user-select: none; }
+
+    /* ── SECTION HELPERS ── */
+    section { padding: 72px 40px; }
+    .s-tag { display: inline-flex; align-items: center; gap: 7px; color: var(--rust); font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .s-tag::before { content: ''; width: 16px; height: 2px; background: var(--rust); border-radius: 2px; }
+    h2 { font-size: 1.85rem; font-weight: 800; color: var(--ink); line-height: 1.2; margin-bottom: 12px; }
+    .s-lead { font-size: 0.96rem; color: var(--txt-mid); line-height: 1.85; max-width: 540px; margin-bottom: 48px; }
+
+    /* ── ÄRZTINNEN ── */
+    .team-section { background: var(--sage-pale); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 820px; }
+    .team-member { text-align: center; }
+    .team-photo-wrap { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; border: 5px solid rgba(90,133,96,0.35); box-shadow: 0 8px 28px rgba(0,0,0,0.09); }
+    .team-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .team-name { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .team-role { font-size: 0.77rem; color: var(--rust); font-weight: 600; margin-bottom: 12px; }
+    .team-langs { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
+    .lang-chip { background: var(--sage-pale); color: var(--sage); font-size: 0.69rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+
+    /* ── MITARBEITERINNEN ── */
+    .staff-section { background: var(--warm); border-top: 1px solid var(--rule); }
+    .staff-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px 20px; }
+    .staff-member { text-align: center; }
+    .staff-photo-wrap { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; margin: 0 auto 12px; border: 3px solid var(--sand); }
+    .staff-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .staff-name { font-size: 0.84rem; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .staff-role { font-size: 0.72rem; color: var(--txt-mid); line-height: 1.4; }
+
+    /* ── PRAXIS GALERIE ── */
+    .praxis-gallery { overflow: hidden; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+    .gallery-img { width: 100%; height: 300px; display: block; object-fit: cover; object-position: center center; transition: transform .4s; background: var(--sage-pale); }
+    .gallery-img:hover { transform: scale(1.02); }
+
+    /* ── USPs ── */
+    .praxis-info { background: var(--sand); }
+    .praxis-info-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 900px; }
+    .praxis-info h2 { margin-bottom: 16px; }
+    .praxis-info p { color: var(--txt-mid); font-size: 0.95rem; line-height: 1.85; margin-bottom: 28px; }
+    .usp-list { display: flex; flex-direction: column; gap: 14px; }
+    .usp-item { display: flex; align-items: center; gap: 12px; font-size: 0.88rem; font-weight: 500; color: var(--txt); }
+    .usp-check { width: 28px; height: 28px; border-radius: 50%; background: var(--rust); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+    /* ── LEISTUNGEN – clean numbered ── */
+    .leistungen-section { background: var(--warm); }
+    .leistungen-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+    .lk { padding: 28px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 20px; align-items: flex-start; }
+    .lk:nth-child(odd)  { padding-right: 48px; }
+    .lk:nth-child(even) { padding-left: 48px; border-left: 1px solid var(--rule); }
+    .lk:nth-last-child(-n+2) { border-bottom: none; }
+    .lk:nth-last-child(-n+2) { border-bottom: none; }
+    .lk-num { font-size: 0.68rem; font-weight: 800; color: var(--rust); letter-spacing: 1px; flex-shrink: 0; padding-top: 3px; min-width: 22px; }
+    .lk-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+    .lk-body p { font-size: 0.83rem; color: var(--txt-mid); line-height: 1.65; }
+
+    /* ── ÖFFNUNGSZEITEN ── */
+    .oz-section { background: var(--white); }
+    .oz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    .oz-card { background: var(--warm); border-radius: 20px; padding: 32px 28px; border: 1px solid var(--rule); }
+    .oz-card-title { font-size: 0.78rem; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    table.oz { width: 100%; border-collapse: collapse; }
+    table.oz td { padding: 9px 0; font-size: 0.88rem; border-bottom: 1px solid var(--rule); }
+    table.oz tr:last-child td { border-bottom: none; }
+    table.oz td:first-child { color: var(--txt-mid); width: 108px; }
+    table.oz td:last-child { font-weight: 500; }
+    .oz-note { margin-top: 18px; font-size: 0.78rem; color: var(--txt-light); line-height: 1.65; }
+    .contact-rows { display: flex; flex-direction: column; gap: 18px; }
+    .ci { display: flex; align-items: flex-start; gap: 12px; }
+    .ci-icon { width: 34px; height: 34px; border-radius: 10px; background: var(--rust-pale); color: var(--rust); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .ci-label { font-size: 0.69rem; font-weight: 700; color: var(--txt-light); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px; }
+    .ci-val { font-size: 0.88rem; font-weight: 500; color: var(--txt); }
+    .ci-val a { color: var(--rust); text-decoration: none; }
+    .ci-note { font-size: 0.75rem; color: var(--txt-light); margin-top: 3px; line-height: 1.5; display: block; }
+
+    /* ── ÖFFNUNGSZEITEN BADGE ── */
+    #oz-badge { display: none; align-items: center; gap: 5px; font-size: 0.67rem; font-weight: 600; margin-top: 4px; line-height: 1; }
+    #oz-badge.show { display: inline-flex; }
+    #oz-badge .bz-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    #oz-badge.open  { color: #1e7d34; }
+    #oz-badge.open  .bz-dot { background: #2e9c47; }
+    #oz-badge.closed { color: #b0400a; }
+    #oz-badge.closed .bz-dot { background: #c0432a; }
+    #oz-badge.holiday { color: var(--sage); }
+    #oz-badge.holiday .bz-dot { background: var(--sage); }
+    #oz-badge .bz-greet { color: var(--txt-mid); font-weight: 400; margin-left: 2px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); padding: 40px; }
+    .foot-top { display: flex; justify-content: space-between; align-items: center; }
+    .foot-name { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .foot-sub { font-size: 0.78rem; color: rgba(255,255,255,0.38); margin-bottom: 3px; }
+    .foot-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+    .foot-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+    .foot-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.8rem; transition: color .2s; }
+    .foot-links a:hover { color: var(--sage); }
+
+    /* ── RESPONSIVE ── */
+
+    /* ── Tablet Landscape / kleine Desktops (≤ 1023px) ── */
+    @media (max-width: 1023px) {
+      section { padding: 64px 32px; }
+      /* Hero: einspaltiger Stack */
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 56px 40px 36px; }
+      .hero-right { padding: 0 40px 60px; justify-content: center; }
+      .hero-portrait { width: 260px; height: 340px; }
+      /* Service Strip */
+      .service-strip { padding: 0; }
+      .service-strip-inner { flex-direction: column; max-width: 100%; }
+      .ss-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.15); justify-content: center; padding: 16px 24px; }
+      .ss-item:last-child { border-bottom: none; }
+      /* Sprachen */
+      .lang-inner { flex-wrap: wrap; gap: 20px; }
+      .lang-divider { display: none; }
+      .lang-names { flex-wrap: wrap; }
+      /* Galerie */
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-img { height: 220px; }
+      /* USPs */
+      .praxis-info-inner { grid-template-columns: 1fr; gap: 40px; }
+      /* Leistungen */
+      .leistungen-grid { grid-template-columns: 1fr; }
+      .lk { padding-left: 0 !important; padding-right: 0 !important; border-left: none !important; }
+      .lk:last-child { border-bottom: none; }
+      /* Öffnungszeiten */
+      .oz-grid { grid-template-columns: 1fr; }
+      /* Team */
+      .team-grid { gap: 20px; }
+      /* Staff */
+      .staff-grid { grid-template-columns: repeat(3, 1fr); }
+      /* Footer */
+      .foot-top { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .foot-links { justify-content: flex-start; }
+    }
+
+    /* ── Tablet Portrait (≤ 767px) — iPad Mini, iPad Air, Galaxy Tab, Surface Go … ── */
+    @media (max-width: 767px) {
+      nav { padding: 0 20px; height: 56px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .mob-menu { top: 56px; }
+      html { scroll-padding-top: 56px; }
+      section { padding: 52px 24px; }
+      /* Notice */
+      .notice { padding: 10px 40px 10px 16px; font-size: 0.8rem; }
+      /* Hero */
+      .hero { min-height: auto; }
+      .hero-left { padding: 44px 24px 28px; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero-lead { font-size: 0.94rem; }
+      .hero-stats { gap: 16px; }
+      .hero-right { padding: 0 24px 52px; justify-content: center; }
+      .hero-portrait { width: 100%; max-width: 280px; height: 360px; }
+      /* Sprachen */
+      .lang-section { padding: 40px 24px; }
+      .lang-item { padding: 6px 12px; font-size: 0.84rem; }
+      .lang-bg-num { display: none; }
+      /* Team */
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 100%; }
+      .team-photo-wrap { width: 130px; height: 130px; }
+      /* Staff */
+      .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 16px 12px; }
+      /* Galerie */
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-img { height: 200px; }
+      /* Leistungen */
+      .leistungen-grid { grid-template-columns: 1fr; }
+      /* Öffnungszeiten */
+      .oz-grid { grid-template-columns: 1fr; }
+      /* Footer */
+      .foot-top { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .foot-links { flex-wrap: wrap; gap: .6rem 1.2rem; justify-content: flex-start; }
+    }
+
+    /* ── Smartphones (≤ 599px) — iPhone 14/15, Galaxy S, Pixel … ── */
+    @media (max-width: 599px) {
+      section { padding: 44px 18px; }
+      /* Notice */
+      .notice { padding: 10px 38px 10px 14px; font-size: 0.78rem; }
+      /* Hero */
+      .hero-left { padding: 36px 18px 22px; }
+      .hero h1 { font-size: 1.8rem; line-height: 1.18; }
+      .hero-lead { font-size: 0.91rem; margin-bottom: 26px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-secondary { width: 100%; justify-content: center; padding: 14px 20px; font-size: 0.9rem; }
+      .hero-stats { flex-wrap: wrap; gap: 14px 20px; }
+      .hs-num { font-size: 1.7rem; }
+      .hero-right { padding: 0 18px 44px; justify-content: center; }
+      .hero-portrait { width: 100%; max-width: 240px; height: 300px;
+        /* Glow auf mobile reduzieren – verhindert horizontalen Scroll */
+        box-shadow: 0 0 40px 10px rgba(210,168,130,0.22), 0 16px 40px rgba(100,50,20,0.10); }
+      .hero-chip { font-size: 0.72rem; padding: 8px 14px; white-space: nowrap; }
+      /* Sektionen */
+      h2 { font-size: 1.5rem; }
+      .s-lead { font-size: 0.91rem; margin-bottom: 32px; }
+      /* Sprachen */
+      .lang-section { padding: 36px 18px; }
+      .lang-headline { font-size: 1.2rem; }
+      .lang-item { padding: 5px 10px; font-size: 0.79rem; }
+      /* Team */
+      .team-grid { grid-template-columns: 1fr; gap: 28px; }
+      .team-photo-wrap { width: 140px; height: 140px; }
+      /* Staff */
+      .staff-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 10px; }
+      .staff-photo-wrap { width: 80px; height: 80px; }
+      /* Galerie */
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+      .gallery-img { height: 160px; }
+      /* Service Strip */
+      .service-strip-inner { flex-direction: column; }
+      .ss-item { padding: 14px 18px; }
+      .ss-label { font-size: 0.82rem; }
+      /* Leistungen */
+      .lk { gap: 14px; }
+      /* Öffnungszeiten */
+      .oz-card { padding: 24px 18px; }
+      table.oz td { font-size: 0.83rem; padding: 8px 0; }
+      /* Footer */
+      footer { padding: 32px 18px 24px; }
+      .foot-links { gap: .5rem 1rem; }
+      .foot-name { font-size: 0.92rem; }
+    }
+
+    /* ── Kleine Smartphones (≤ 399px) — iPhone SE, Galaxy A-Serie, Moto E … ── */
+    @media (max-width: 399px) {
+      section { padding: 36px 14px; }
+      /* Hero */
+      .hero-left { padding: 28px 14px 18px; }
+      .hero h1 { font-size: 1.5rem; }
+      .hero-right { padding: 0 14px 36px; }
+      .hero-portrait { max-width: 200px; height: 260px;
+        box-shadow: 0 0 28px 8px rgba(210,168,130,0.18), 0 12px 32px rgba(100,50,20,0.09); }
+      .hero-chip { font-size: 0.68rem; padding: 7px 12px; }
+      .hs-num { font-size: 1.5rem; }
+      /* Sektionen */
+      h2 { font-size: 1.3rem; }
+      /* Sprachen */
+      .lang-section { padding: 28px 14px; }
+      .lang-item { padding: 4px 8px; font-size: 0.75rem; }
+      .lang-headline { font-size: 1.08rem; }
+      /* Team */
+      .team-photo-wrap { width: 120px; height: 120px; }
+      .lang-chip { font-size: 0.63rem; padding: 2px 7px; }
+      /* Staff */
+      .staff-grid { grid-template-columns: repeat(2, 1fr); gap: 12px 8px; }
+      .staff-photo-wrap { width: 70px; height: 70px; }
+      .staff-name { font-size: 0.78rem; }
+      .staff-role { font-size: 0.67rem; }
+      /* Galerie — 1 Spalte auf winzigen Screens */
+      .gallery-grid { grid-template-columns: 1fr; gap: 2px; }
+      .gallery-img { height: 200px; }
+      /* Service Strip */
+      .ss-item { padding: 12px 14px; }
+      .ss-label { font-size: 0.79rem; }
+      /* Footer */
+      footer { padding: 24px 14px 20px; }
+      .foot-sub { font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NOTICE – wird am 06.06.2026 automatisch ausgeblendet -->
+  <div class="notice" id="notice">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <div class="notice-lines">
+      <span>Die Praxis ist in den Pfingstferien vom 1.–5. Juni geschlossen. Vertretung: Dr. Krebs, Forstenrieder Allee 59, Tel. 089&nbsp;759&nbsp;10&nbsp;55. — Rezepte bitte über Online-Rezeption oder Doctolib bestellen.</span>
+      <div class="notice-line-sep"></div>
+      <span class="notice-email">⚠ Datenschutz-Hinweis: Die Kommunikation über E-Mail wird aus Datenschutzgründen eingestellt. Bitte kontaktieren Sie uns ausschließlich über Doctolib oder die Online-Rezeption.</span>
+    </div>
+    <button class="notice-close" onclick="document.getElementById('notice').style.display='none'" aria-label="Hinweis schließen">×</button>
+  </div>
+  <script>
+    /* Pfingstferien-Banner automatisch ab 06.06.2026 ausblenden */
+    (function() {
+      var hideFrom = new Date(2026, 5, 6); // 6. Juni 2026 (Monat 0-basiert: 5 = Juni)
+      if (new Date() >= hideFrom) {
+        var n = document.getElementById('notice');
+        if (n) n.style.display = 'none';
+      }
+    })();
+  </script>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#sprechzeiten" class="nav-brand">
+      <span class="nav-name">Dr. med. Natascha Juchert</span>
+      <span class="nav-sub">Hausarztpraxis Forstenried</span>
+      <span id="oz-badge"><span class="bz-dot"></span><span id="bz-text"></span><span id="bz-greet" class="bz-greet"></span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#team">Team</a></li>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#sprechzeiten">Sprechzeiten</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="nav-cta">Termin buchen</a></li>
+    </ul>
+    <button class="burger" id="burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    <a href="#team">Team</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#sprechzeiten">Sprechzeiten</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:089751208">089 / 75 12 08</a>
+    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="mob-cta-m">Termin online buchen</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Hausarztpraxis Forstenried</div>
+      <h1>Medizin, die<br>Ihre <span>Sprache</span><br>spricht.</h1>
+      <p class="hero-lead">Drei Ärztinnen, sieben Sprachen, eine Hebamme und eine Podologin unter einem Dach. Ihre Praxis in Forstenried — digital, barrierefrei, immer erreichbar.</p>
+      <div class="hero-btns">
+        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Termin buchen
+        </a>
+        <a href="tel:089751208" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.15-1.15a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          089 / 75 12 08
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="hs-num">3</span><span class="hs-label">Ärztinnen</span></div>
+        <div><span class="hs-num" style="color:var(--sage);">7</span><span class="hs-label">Sprachen</span></div>
+        <div><span class="hs-num">2+</span><span class="hs-label">Spezialistinnen im Haus</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-portrait-wrap">
+        <img class="hero-portrait" src="https://www.dr-juchert.de/wp-content/uploads/Juchert_Natascha_sw_web.jpg" alt="Dr. med. Natascha Juchert" />
+        <div class="hero-chip">
+          <span class="hero-chip-dot"></span>
+          Online-Termin rund um die Uhr
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE STRIP -->
+  <div class="service-strip">
+    <div class="service-strip-inner">
+      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="ss-item">
+        <div class="ss-icon-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+        </div>
+        <span class="ss-label">Termin buchen</span>
+        <span class="ss-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="#" class="ss-item">
+        <div class="ss-icon-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <span class="ss-label">Rezept bestellen</span>
+        <span class="ss-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="ss-item">
+        <div class="ss-icon-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <span class="ss-label">Videosprechstunde</span>
+        <span class="ss-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- SPRACHEN – minimal band -->
+  <div class="lang-section">
+    <span class="lang-bg-num">7</span>
+    <div class="lang-inner">
+      <div class="lang-statement">
+        <div class="lang-headline"><span>7</span> Sprachen.</div>
+        <div class="lang-subline">Keine Barriere.</div>
+      </div>
+      <div class="lang-divider"></div>
+      <div class="lang-names">
+        <span class="lang-item">Deutsch</span>
+        <span class="lang-item">Englisch</span>
+        <span class="lang-item">Türkisch</span>
+        <span class="lang-item">Persisch</span>
+        <span class="lang-item">Griechisch</span>
+        <span class="lang-item">Italienisch</span>
+        <span class="lang-item">Spanisch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEISTUNGEN -->
+  <section class="leistungen-section" id="leistungen">
+    <div class="s-tag">Was wir für Sie tun</div>
+    <h2>Unsere Leistungen im Überblick</h2>
+    <p class="s-lead">Ab sofort haben Sie die Möglichkeit, Rezepte und Überweisungen mit Hilfe einer 24 Std Hotline telefonisch, per Doctolib oder Fax zu bestellen. Bitte beachten Sie, dass wir die Bestellungen nur während der Praxiszeiten bearbeiten können.</p>
+    <div class="leistungen-grid">
+      <div class="lk">
+        <span class="lk-num">01</span>
+        <div class="lk-body">
+          <h3>Untersuchungen</h3>
+          <p><strong>Kassenleistungen:</strong> Ruhe-, 24 Stunden und Belastungs-EKG, 24 Stunden Blutdruckmessung, Ultraschall (Leber, Galle, Nieren, Milz, Aorta, Blase), Lungenfunktionsdiagnostik, Blutzucker sofort in der Praxis. Alle anderen laborchemischen Untersuchungen meist innerhalb von 24 Stunden im Speziallabor. Kleine Chirurgie (akute Wundversorgung) und postoperative Versorgung, Psychosomatische Grundversorgung, Impfberatung und Impfungen nach STIKO, OP-Vorbereitung, Jugendarbeitsschutz-Untersuchungen.</p>
+          <p><strong>Naturheilkunde / IGeL-Leistungen:</strong> Vitamin C-Infusion, Infusionstherapie (bei Schmerzen, Infektanfälligkeit und allg. Immunschwäche sowie Lebererkrankungen und Haarausfall), Tauchtauglichkeitsuntersuchungen, Sport-Tauglichkeitsuntersuchungen.</p>
+        </div>
+      </div>
+      <div class="lk">
+        <span class="lk-num">02</span>
+        <div class="lk-body">
+          <h3>Vorsorge / Impfungen</h3>
+          <p><strong>Gesundheits-Check:</strong> Dieser wird auf Wunsch nach den Richtlinien der Krankenkassen oder im Rahmen der individuellen Gesundheitsleistungen zusammen gestellt. Zwischen dem 18. und 35. Lebensjahr hat jeder gesetzlich Versicherte einmal Anspruch auf einen Check. Ab dem 35. Lebensjahr kann er alle drei Jahre durchgeführt werden.</p>
+          <p><strong>Hautkrebs-Untersuchung ab dem 35. Lebensjahr:</strong> Umfasst eine genaue Untersuchung der gesamten Hautoberfläche. Sie wird alle 2 Jahre von den gesetzlichen Krankenkassen übernommen.</p>
+          <p><strong>Impfungen:</strong> Beratung und Durchführung im Rahmen der gesetzlichen Krankenkassen. (keine Impfungen gegen Gelbfieber!)</p>
+          <p>Medikamentenempfehlungen für Nah- und Fernreisen.</p>
+        </div>
+      </div>
+      <div class="lk">
+        <span class="lk-num">03</span>
+        <div class="lk-body">
+          <h3>Schmerztherapie</h3>
+          <p>Wir bieten Schmerztherapie als Teil unseres hausärztlichen Leistungsspektrums an. Sprechen Sie uns bei akuten oder chronischen Schmerzen an — wir finden gemeinsam den richtigen Behandlungsweg für Sie.</p>
+        </div>
+      </div>
+      <div class="lk">
+        <span class="lk-num">04</span>
+        <div class="lk-body">
+          <h3>Disease Management Programme (DMP)</h3>
+          <p>In unserer allgemeinmedizinischen Hausarzt Praxis können Sie an allen Disease-Management Programmen teilnehmen, die derzeit von den Krankenkassen angeboten werden.</p>
+          <p>DMP Diabetes, KHK<br>DMP Asthma/COPD</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USPs -->
+  <section class="praxis-info">
+    <div class="praxis-info-inner">
+      <div>
+        <div class="s-tag">Was uns besonders macht</div>
+        <h2>Mehr als eine Hausarztpraxis</h2>
+        <p>In unserer Praxis in Forstenried finden Sie unter einem Dach, was sonst selten ist: spezialisierte Versorgung, echte Erreichbarkeit und ein Team, das wirklich da ist — auch bevor Sie anrufen müssen.</p>
+        <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:8px;">Jetzt Termin buchen</a>
+      </div>
+      <div class="usp-list">
+        <div class="usp-item">
+          <div class="usp-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Hebamme & Podologin direkt in der Praxis
+        </div>
+        <div class="usp-item">
+          <div class="usp-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Termin & Rezept rund um die Uhr online
+        </div>
+        <div class="usp-item">
+          <div class="usp-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Barrierefrei im Erdgeschoss
+        </div>
+        <div class="usp-item">
+          <div class="usp-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Videosprechstunde für akute Beschwerden
+        </div>
+        <div class="usp-item">
+          <div class="usp-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          DMP-Programme: Diabetes, Herz, Asthma, COPD
+        </div>
+        <div class="usp-item">
+          <div class="usp-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Gut erreichbar in Forstenried
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖFFNUNGSZEITEN + KONTAKT -->
+  <section class="oz-section" id="sprechzeiten">
+    <div class="s-tag">Erreichbarkeit</div>
+    <h2>Sprechzeiten & Kontakt</h2>
+    <div class="oz-grid">
+      <div class="oz-card">
+        <div class="oz-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Sprechzeiten
+        </div>
+        <table class="oz">
+          <tr><td>Montag</td><td>08:00 – 12:30 Uhr</td></tr>
+          <tr><td>Dienstag</td><td>08:00 – 12:30 · 16:00 – 18:00 Uhr</td></tr>
+          <tr><td>Mittwoch</td><td>08:00 – 12:30 Uhr</td></tr>
+          <tr><td>Donnerstag</td><td>08:00 – 12:30 · 16:00 – 18:00 Uhr</td></tr>
+          <tr><td>Freitag</td><td>08:00 – 12:30 Uhr</td></tr>
+        </table>
+        <div class="oz-note">Bitte kommen Sie mit Termin. Online-Buchung via Doctolib — jederzeit, auch abends und am Wochenende.</div>
+      </div>
+      <div class="oz-card" id="kontakt">
+        <div class="oz-card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          So finden Sie uns
+        </div>
+        <div class="contact-rows">
+          <div class="ci">
+            <div class="ci-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><span class="ci-label">Adresse</span><div class="ci-val">Fritz-Baer-Straße 1, 81476 München<br><span style="font-size:.8rem;color:var(--rust);font-weight:500;">Erdgeschoss · Barrierefrei</span></div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.15-1.15a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><span class="ci-label">Telefon / Fax</span><div class="ci-val"><a href="tel:089751208">089 / 75 12 08</a><br><span style="font-size:.8rem;color:var(--txt-mid);">Fax 089 / 75 46 73</span></div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div><span class="ci-label">Online-Termin</span><div class="ci-val"><a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank">Via Doctolib buchen →</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAXIS GALERIE -->
+  <div class="praxis-gallery">
+    <div class="gallery-grid">
+      <img class="gallery-img" src="https://www.dr-juchert.de/wp-content/uploads/praxis_04.jpg" alt="Hausarztpraxis Forstenried" />
+      <img class="gallery-img" src="https://www.dr-juchert.de/wp-content/uploads/praxis_01.jpg" alt="Wartebereich" />
+      <img class="gallery-img" src="https://www.dr-juchert.de/wp-content/uploads/praxis_03.jpg" alt="Behandlungsraum" />
+    </div>
+  </div>
+
+  <!-- ÄRZTINNEN -->
+  <section class="team-section" id="team">
+    <div class="s-tag">Ärztinnen</div>
+    <h2>Menschen, denen Sie vertrauen können</h2>
+    <p class="s-lead">Drei Ärztinnen, die zuhören — in Ihrer Sprache, mit Zeit, mit echtem Interesse.</p>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="team-photo-wrap">
+          <img class="team-photo" src="https://www.dr-juchert.de/wp-content/uploads/Juchert_Natascha_sw_web.jpg" alt="Dr. med. Natascha Juchert" />
+        </div>
+        <div class="team-name">Dr. med. Natascha Juchert</div>
+        <div class="team-role">Fachärztin für Allgemeinmedizin</div>
+        <div class="team-langs">
+          <span class="lang-chip">Deutsch</span>
+          <span class="lang-chip">Englisch</span>
+          <span class="lang-chip">Italienisch</span>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="team-photo-wrap">
+          <img class="team-photo" src="https://www.dr-juchert.de/wp-content/uploads/Dimomeletis_Miriam_sw_web_neu_2025_04.jpg" alt="Miriam Dimomeletis" />
+        </div>
+        <div class="team-name">Miriam Dimomeletis</div>
+        <div class="team-role">Fachärztin für Allgemeinmedizin</div>
+        <div class="team-langs">
+          <span class="lang-chip">Deutsch</span>
+          <span class="lang-chip">Türkisch</span>
+          <span class="lang-chip">Griechisch</span>
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="team-photo-wrap">
+          <img class="team-photo" src="https://www.dr-juchert.de/wp-content/uploads/Froeschl_Hanna_sw_web.jpg" alt="Hanna Fröschl" />
+        </div>
+        <div class="team-name">Hanna Fröschl</div>
+        <div class="team-role">Ärztin in Weiterbildung</div>
+        <div class="team-langs">
+          <span class="lang-chip">Deutsch</span>
+          <span class="lang-chip">Persisch</span>
+          <span class="lang-chip">Spanisch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MITARBEITERINNEN -->
+  <section class="staff-section">
+    <div class="s-tag">Team</div>
+    <h2>Unser ganzes Team</h2>
+    <p class="s-lead">Neun Mitarbeiterinnen, die den Praxisalltag tragen — zuverlässig, herzlich, eingespielt.</p>
+    <div class="staff-grid">
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Mirzada_Masha_sw_web.jpg" alt="Masha Mirzada" /></div>
+        <div class="staff-name">Masha Mirzada</div>
+        <div class="staff-role">med. Fachangestellte, Praxismanagerin</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Karadeniz_Asli_sw_web.jpg" alt="Asli Karadeniz" /></div>
+        <div class="staff-name">Asli Karadeniz</div>
+        <div class="staff-role">med. Fachangestellte</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Akdemir_Ayse_sw_web.jpg" alt="Ayse Akdemir" /></div>
+        <div class="staff-name">Ayse Akdemir</div>
+        <div class="staff-role">Hygienebeauftragte</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Schrank_Maria_sw_web.jpg" alt="Maria Schrank" /></div>
+        <div class="staff-name">Maria Schrank</div>
+        <div class="staff-role">Empfang</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Rogowska_Justyna_sw_web.jpg" alt="Justyna Rogowska" /></div>
+        <div class="staff-name">Justyna Rogowska</div>
+        <div class="staff-role">Bestellmanagement</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Juchert_Lena_sw_web.jpg" alt="Lena Juchert" /></div>
+        <div class="staff-name">Lena Juchert</div>
+        <div class="staff-role">Auszubildende</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Doosti_Shakila_sw_web.jpg" alt="Shakila Doosti" /></div>
+        <div class="staff-name">Shakila Doosti</div>
+        <div class="staff-role">Auszubildende</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Schrank_Katrina_sw_web.jpg" alt="Katrina Schrank" /></div>
+        <div class="staff-name">Katrina Schrank</div>
+        <div class="staff-role">Studentin</div>
+      </div>
+      <div class="staff-member">
+        <div class="staff-photo-wrap"><img class="staff-photo" src="https://www.dr-juchert.de/wp-content/uploads/Hain_Emma_sw_web.jpg" alt="Emma Hain" /></div>
+        <div class="staff-name">Emma Hain</div>
+        <div class="staff-role">Schülerin</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-top">
+      <div>
+        <div class="foot-name">Dr. med. Natascha Juchert</div>
+        <div class="foot-sub">Hausarztpraxis Forstenried · Fritz-Baer-Straße 1 · 81476 München</div>
+        <div class="foot-copy">© 2026 · Alle Rechte vorbehalten</div>
+      </div>
+      <div class="foot-links">
+        <a href="#team">Team</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#sprechzeiten">Sprechzeiten</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;">
+      <span onclick="window.open('https://praxisecht.de','_blank')" style="font-size:0.65rem;color:rgba(255,255,255,0.22);cursor:pointer;letter-spacing:.03em;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.22)'">Webseite von Alexander Mäding</span>
+    </div>
+  </footer>
+
+  <!-- ── SCHNELLHILFE-WIDGET ── -->
+  <style>
+    .sh-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 500; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+    .sh-btn { display: flex; align-items: center; gap: 9px; background: var(--sage); color: var(--white); border: none; border-radius: 100px; padding: 13px 20px 13px 16px; font-size: 0.82rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 24px rgba(90,133,96,0.35); transition: background .2s, transform .15s; font-family: inherit; letter-spacing: .01em; }
+    .sh-btn:hover { background: #4a7050; transform: translateY(-1px); }
+    .sh-btn svg { flex-shrink: 0; transition: transform .2s; }
+    .sh-panel { background: var(--white); border-radius: 18px; border: 1px solid var(--rule); box-shadow: 0 16px 56px rgba(0,0,0,0.13); width: 316px; max-height: 82vh; overflow-y: auto; animation: shIn .18s ease; transform-origin: bottom right; }
+    @keyframes shIn { from { opacity:0; transform: scale(.96) translateY(8px); } to { opacity:1; transform: scale(1) translateY(0); } }
+    .sh-head { padding: 14px 16px 12px; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-start; gap: 10px; }
+    .sh-head-info { flex: 1; min-width: 0; }
+    .sh-head-label { font-size: 0.67rem; font-weight: 700; color: var(--txt-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+    .sh-head-title { font-size: 0.9rem; font-weight: 800; color: var(--dark); }
+    .sh-lang { display: flex; gap: 3px; flex-shrink: 0; margin-top: 2px; }
+    .sh-lang-btn { background: none; border: 1px solid var(--rule); border-radius: 5px; padding: 2px 7px; font-family: inherit; font-size: 0.63rem; font-weight: 700; cursor: pointer; color: var(--txt-light); transition: all .12s; letter-spacing: .03em; }
+    .sh-lang-btn.active { background: var(--sage); color: var(--white); border-color: var(--sage); }
+    .sh-group-label { font-size: 0.64rem; font-weight: 700; color: var(--txt-light); text-transform: uppercase; letter-spacing: 1px; padding: 11px 16px 5px; background: var(--warm); border-bottom: 1px solid var(--rule); }
+    .sh-action { display: flex; align-items: center; gap: 11px; padding: 10px 16px; text-decoration: none; color: var(--txt); border-bottom: 1px solid var(--rule); transition: background .12s; cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font-family: inherit; }
+    .sh-action:last-child { border-bottom: none; }
+    .sh-action:hover { background: var(--rust-pale); }
+    .sh-action:hover .sh-al { color: var(--rust); }
+    .sh-ico { width: 34px; height: 34px; border-radius: 10px; background: var(--rust-pale); color: var(--rust); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .12s; }
+    .sh-action:hover .sh-ico { background: rgba(139,62,34,0.15); }
+    .sh-ico.sage { background: var(--sage-pale); color: var(--sage); }
+    .sh-action:hover .sh-ico.sage { background: rgba(90,133,96,0.15); }
+    .sh-ico.blue { background: #e8f0fe; color: #3b6fd4; }
+    .sh-ico.red { background: #fde8e8; color: #c0392b; }
+    .sh-txt { flex: 1; min-width: 0; }
+    .sh-al { font-size: 0.84rem; font-weight: 600; color: var(--dark); display: block; transition: color .12s; }
+    .sh-ah { font-size: 0.68rem; color: var(--txt-light); display: block; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sh-chev { color: var(--txt-light); flex-shrink: 0; }
+    .sh-notfall { display: none; padding: 13px 16px; background: #fde8e8; border-top: 1px solid #f5c6c6; }
+    .sh-notfall.open { display: block; }
+    .sh-notfall-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .sh-notfall-row:last-child { margin-bottom: 0; }
+    .sh-notfall a { color: #c0392b; font-weight: 700; font-size: 0.9rem; text-decoration: none; }
+    .sh-notfall a:hover { text-decoration: underline; }
+    .sh-notfall-label { font-size: 0.72rem; color: #7a1a1a; }
+    .sh-panel[hidden] { display: none; }
+    /* ── Flow-Panel ── */
+    #shFlow { display: none; }
+    #shFlow.active { display: block; }
+    .sh-flow-head { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--rule); }
+    .sh-back { background: none; border: none; cursor: pointer; color: var(--txt-light); padding: 4px 6px; display: flex; align-items: center; border-radius: 7px; transition: background .12s, color .12s; flex-shrink: 0; }
+    .sh-back:hover { background: var(--warm); color: var(--dark); }
+    .sh-flow-title { font-size: 0.88rem; font-weight: 800; color: var(--dark); flex: 1; }
+    /* Steps */
+    .sh-step { display: none; padding: 18px 16px; }
+    .sh-step.active { display: block; }
+    .sh-step-q { font-size: 0.91rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; line-height: 1.3; }
+    .sh-step-sub { font-size: 0.74rem; color: var(--txt-light); margin-bottom: 16px; line-height: 1.45; }
+    .sh-yesno { display: flex; gap: 9px; }
+    .sh-yn-btn { flex: 1; padding: 10px 0; border-radius: 10px; border: 1.5px solid var(--rule); background: var(--warm); font-family: inherit; font-size: 0.84rem; font-weight: 700; cursor: pointer; transition: background .12s, border-color .12s, color .12s; color: var(--dark); }
+    .sh-yn-btn:hover { border-color: var(--rust); color: var(--rust); background: var(--rust-pale); }
+    .sh-yn-btn.yes:hover { border-color: var(--sage); color: var(--sage); background: var(--sage-pale); }
+    /* Form */
+    .sh-field { margin-bottom: 12px; }
+    .sh-label { display: block; font-size: 0.69rem; font-weight: 700; color: var(--txt-light); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+    .sh-req { color: var(--rust); margin-left: 1px; }
+    .sh-input, .sh-textarea, .sh-select { width: 100%; box-sizing: border-box; border: 1.5px solid var(--rule); border-radius: 8px; padding: 8px 10px; font-family: inherit; font-size: 0.84rem; color: var(--dark); background: var(--white); transition: border-color .15s; outline: none; }
+    .sh-input:focus, .sh-textarea:focus, .sh-select:focus { border-color: var(--rust); }
+    .sh-textarea { resize: vertical; min-height: 62px; }
+    .sh-submit { width: 100%; margin-top: 6px; padding: 11px 0; border-radius: 10px; background: var(--rust); color: var(--white); border: none; font-family: inherit; font-size: 0.86rem; font-weight: 700; cursor: pointer; transition: background .15s; letter-spacing: .01em; }
+    .sh-submit:hover { background: var(--rust-dark); }
+    /* Confirmation */
+    .sh-confirm-icon { width: 46px; height: 46px; background: var(--sage-pale); color: var(--sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 11px; }
+    .sh-confirm-title { font-size: 0.94rem; font-weight: 800; color: var(--dark); text-align: center; margin-bottom: 5px; }
+    .sh-confirm-txt { font-size: 0.77rem; color: var(--txt-light); text-align: center; line-height: 1.5; margin-bottom: 14px; }
+    .sh-confirm-box { background: var(--warm); border-radius: 10px; padding: 11px 13px; margin-bottom: 13px; }
+    .sh-confirm-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; font-size: 0.77rem; gap: 8px; }
+    .sh-confirm-row:last-child { margin-bottom: 0; }
+    .sh-confirm-key { color: var(--txt-light); flex-shrink: 0; }
+    .sh-confirm-val { color: var(--dark); font-weight: 600; text-align: right; word-break: break-word; }
+    .sh-doctolib-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 0; border-radius: 10px; background: #0596de; color: var(--white) !important; border: none; font-family: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; text-decoration: none; margin-bottom: 8px; transition: background .15s; box-sizing: border-box; }
+    .sh-doctolib-btn:hover { background: #0479b5; }
+    .sh-new-req { width: 100%; padding: 9px 0; border-radius: 10px; background: var(--warm); color: var(--txt); border: 1.5px solid var(--rule); font-family: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background .12s; }
+    .sh-new-req:hover { background: var(--rust-pale); color: var(--rust); border-color: var(--rust); }
+    .sh-confirm-note { font-size: 0.69rem; color: var(--txt-light); text-align: center; line-height: 1.45; margin-top: 10px; }
+    /* Language visibility */
+    .sh-wrap.lang-en .ld { display: none !important; }
+    .sh-wrap.lang-de .le { display: none !important; }
+    /* ── Widget Responsive ── */
+    @media (max-width: 767px) {
+      .sh-wrap { bottom: 16px; right: 16px; }
+      .sh-panel { width: min(316px, calc(100vw - 32px)); max-height: 78vh; }
+      .sh-btn { padding: 11px 16px 11px 14px; font-size: 0.8rem; }
+    }
+    @media (max-width: 599px) {
+      .sh-wrap { bottom: 14px; right: 14px; }
+      .sh-panel { width: calc(100vw - 28px); border-radius: 16px; max-height: 75vh; }
+      .sh-btn { padding: 11px 14px 11px 12px; gap: 7px; }
+      .sh-action { padding: 10px 14px; gap: 10px; }
+      .sh-group-label { padding: 10px 14px 4px; }
+    }
+    @media (max-width: 399px) {
+      .sh-wrap { bottom: 12px; right: 12px; }
+      .sh-panel { width: calc(100vw - 24px); max-height: 72vh; }
+    }
+  </style>
+
+  <div class="sh-wrap lang-de" id="shWrap">
+    <div class="sh-panel" id="shPanel" hidden>
+      <div class="sh-head">
+        <div class="sh-head-info">
+          <div class="sh-head-label"><span class="ld">Hausarztpraxis Forstenried</span><span class="le">GP Practice Forstenried</span></div>
+          <div class="sh-head-title"><span class="ld">Wie können wir helfen?</span><span class="le">How can we help?</span></div>
+        </div>
+        <div class="sh-lang">
+          <button class="sh-lang-btn active" id="shLangDe" onclick="SH.setLang('de')">DE</button>
+          <button class="sh-lang-btn" id="shLangEn" onclick="SH.setLang('en')">EN</button>
+        </div>
+      </div>
+
+      <!-- HAUPTLISTE -->
+      <div id="shList">
+        <!-- TERMINE -->
+        <div class="sh-group-label"><span class="ld">Termine</span><span class="le">Appointments</span></div>
+        <a class="sh-action" href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" rel="noopener">
+          <div class="sh-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Termin vereinbaren</span><span class="le">Book appointment</span></span><span class="sh-ah"><span class="ld">Online über Doctolib — jederzeit</span><span class="le">Online via Doctolib — anytime</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a class="sh-action" href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" rel="noopener">
+          <div class="sh-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="10" y1="14" x2="14" y2="18"/><line x1="14" y1="14" x2="10" y2="18"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Termin absagen / ändern</span><span class="le">Cancel / change appointment</span></span><span class="sh-ah"><span class="ld">Über Ihr Doctolib-Konto</span><span class="le">Via your Doctolib account</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+
+        <!-- ANFRAGEN -->
+        <div class="sh-group-label"><span class="ld">Anfragen</span><span class="le">Requests</span></div>
+        <button class="sh-action" onclick="SH.open('rezept')">
+          <div class="sh-ico sage"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 1v2H8V3z"/><rect x="4" y="5" width="16" height="17" rx="1.5"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/><line x1="9" y1="19" x2="12" y2="19"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Rezept anfordern</span><span class="le">Request prescription</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="sh-action" onclick="SH.open('au')">
+          <div class="sh-ico sage"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20"/><path d="M3 17V9a1 1 0 0 1 1-1h4v9"/><path d="M11 17V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v12"/><circle cx="7" cy="6" r="1.5"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">AU anfordern</span><span class="le">Request sick note (AU)</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="sh-action" onclick="SH.open('ueberweisung')">
+          <div class="sh-ico sage"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="3"/><path d="M2 20v-2a4 4 0 0 1 4-4h4"/><polyline points="17 15 20 12 17 9"/><line x1="13" y1="12" x2="20" y2="12"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Überweisung anfordern</span><span class="le">Request referral</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- DOKUMENTE -->
+        <div class="sh-group-label"><span class="ld">Dokumente</span><span class="le">Documents</span></div>
+        <button class="sh-action" onclick="SH.open('dokumente')">
+          <div class="sh-ico blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Dokumente hochladen</span><span class="le">Upload documents</span></span><span class="sh-ah"><span class="ld">Über das Patientenportal</span><span class="le">Via the patient portal</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="sh-action" onclick="SH.open('befund')">
+          <div class="sh-ico blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="7 14 9.5 12 11.5 16 14 13 16 15"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Befund anfordern</span><span class="le">Request medical report</span></span><span class="sh-ah"><span class="ld">Über das Patientenportal</span><span class="le">Via the patient portal</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- SONSTIGES -->
+        <div class="sh-group-label"><span class="ld">Sonstiges</span><span class="le">Other</span></div>
+        <button class="sh-action" onclick="if(typeof Tawk_API!=='undefined'&&Tawk_API.toggle){Tawk_API.toggle();}">
+          <div class="sh-ico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="11" r="0.5" fill="currentColor"/><circle cx="12" cy="11" r="0.5" fill="currentColor"/><circle cx="15" cy="11" r="0.5" fill="currentColor"/></svg>
+          </div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Chat starten</span><span class="le">Start live chat</span></span><span class="sh-ah"><span class="ld">Live-Chat mit der Praxis</span><span class="le">Live chat with the practice</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <a class="sh-action" href="https://search.google.com/local/writereview?placeid=ChIJmwmWfBTZnUcRt_8NmGho86s" target="_blank" rel="noopener">
+          <div class="sh-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="sh-txt"><span class="sh-al"><span class="ld">Feedback geben</span><span class="le">Leave feedback</span></span><span class="sh-ah"><span class="ld">Google-Bewertung schreiben</span><span class="le">Write a Google review</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <button class="sh-action" onclick="toggleNotfall()">
+          <div class="sh-ico red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.7 8 11 4.5-1.3 8-6 8-11V6z"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="9" y1="11" x2="15" y2="11"/></svg></div>
+          <div class="sh-txt"><span class="sh-al" style="color:#c0392b;"><span class="ld">Notfall-Hilfe</span><span class="le">Emergency help</span></span><span class="sh-ah"><span class="ld">112 · Ärztlicher Bereitschaftsdienst</span><span class="le">112 · Emergency medical service</span></span></div>
+          <svg class="sh-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="sh-notfall" id="shNotfall">
+          <div class="sh-notfall-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><a href="tel:112">112</a> <span class="sh-notfall-label"><span class="ld">— Notruf (lebensbedrohlich)</span><span class="le">— Emergency call (life-threatening)</span></span></div>
+          </div>
+          <div class="sh-notfall-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><a href="tel:116117">116 117</a> <span class="sh-notfall-label"><span class="ld">— Ärztlicher Bereitschaftsdienst</span><span class="le">— On-call medical service</span></span></div>
+          </div>
+        </div>
+      </div><!-- /#shList -->
+
+      <!-- FLOW-PANEL (Multi-Step) -->
+      <div id="shFlow">
+        <div class="sh-flow-head">
+          <button class="sh-back" onclick="SH.back()" aria-label="Zurück / Back">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="sh-flow-title" id="shFlowTitle"></div>
+        </div>
+
+        <!-- Schritt 0: Patient? -->
+        <div class="sh-step" id="shStep0">
+          <div class="sh-step-q" id="shPatQ"></div>
+          <div class="sh-step-sub" id="shPatSub"></div>
+          <div class="sh-yesno">
+            <button class="sh-yn-btn" id="shNoBtn" onclick="SH.notPatient()"></button>
+            <button class="sh-yn-btn yes" id="shYesBtn" onclick="SH.isPatient()"></button>
+          </div>
+        </div>
+
+        <!-- Schritt 1: Formular -->
+        <div class="sh-step" id="shStep1">
+          <form id="shForm" onsubmit="return SH.submit(event)">
+            <div id="shFormFields"></div>
+            <button type="submit" class="sh-submit" id="shSubmitBtn"></button>
+          </form>
+        </div>
+
+        <!-- Schritt 2: Bestätigung -->
+        <div class="sh-step" id="shStep2">
+          <div class="sh-confirm-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="sh-confirm-title" id="shConfTitle"></div>
+          <div class="sh-confirm-txt" id="shConfTxt"></div>
+          <div class="sh-confirm-box" id="shConfBox"></div>
+          <a class="sh-doctolib-btn" id="shDoctolibBtn" href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span id="shDoctolibBtnTxt"></span>
+          </a>
+          <button class="sh-new-req" id="shNewReqBtn" onclick="SH.reset()"></button>
+          <div class="sh-confirm-note" id="shConfNote"></div>
+        </div>
+      </div><!-- /#shFlow -->
+
+    </div><!-- /.sh-panel -->
+
+    <button class="sh-btn" id="shBtn" onclick="toggleSH()" aria-label="Praxis-Service öffnen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      <span class="ld">Praxis-Service</span><span class="le">Practice Service</span>
+    </button>
+  </div><!-- /.sh-wrap -->
+
+  <script>
+  /* ── Schnellhilfe Widget ── */
+  var SH = (function() {
+    var DOCTOLIB = 'https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert';
+    var lang = 'de';
+    var currentFlow = null;
+
+    /* ── Texte ── */
+    var T = {
+      de: {
+        patQ:     'Sind Sie Patient in unserer Praxis?',
+        patSub:   'Diese Information hilft uns, Ihre Anfrage richtig zuzuordnen.',
+        yes:      'Ja, ich bin Patient',
+        no:       'Nein',
+        submit:   'Anfrage absenden',
+        confTitle:'Anfrage erhalten',
+        confTxt:  'Wir bearbeiten Ihre Anfrage schnellstmöglich – in der Regel am nächsten Werktag.',
+        docBtn:   'Zur Online-Rezeption',
+        newReq:   'Weitere Anfrage stellen',
+        confNote: 'E-Mail-Kommunikation wurde aus Datenschutzgründen eingestellt. Anfragen werden ausschließlich über die Online-Rezeption bearbeitet.',
+      },
+      en: {
+        patQ:     'Are you a patient of our practice?',
+        patSub:   'This helps us assign your request correctly.',
+        yes:      'Yes, I am a patient',
+        no:       'No',
+        submit:   'Submit request',
+        confTitle:'Request received',
+        confTxt:  'We will process your request as soon as possible – usually the next working day.',
+        docBtn:   'Go to online reception',
+        newReq:   'Submit another request',
+        confNote: 'Email communication has been discontinued for data protection reasons. Requests are handled via our online reception only.',
+      }
+    };
+
+    /* ── Formular-Definitionen ── */
+    var FLOWS = {
+      au: {
+        de: { label: 'AU anfordern', fields: [
+          { id:'name', label:'Name, Vorname',           type:'text',     placeholder:'Mustermann, Max',             req:true  },
+          { id:'dob',  label:'Geburtsdatum',            type:'date',     placeholder:'',                            req:true  },
+          { id:'from', label:'Erkrankt seit',           type:'date',     placeholder:'',                            req:true  },
+          { id:'to',   label:'Bis voraussichtlich',     type:'date',     placeholder:'(optional)',                   req:false },
+          { id:'note', label:'Hinweis / Beschwerden',   type:'textarea', placeholder:'z. B. Erkältung, Rückenschmerzen … (optional)', req:false }
+        ]},
+        en: { label: 'Request sick note (AU)', fields: [
+          { id:'name', label:'Last name, First name',   type:'text',     placeholder:'Smith, John',                 req:true  },
+          { id:'dob',  label:'Date of birth',           type:'date',     placeholder:'',                            req:true  },
+          { id:'from', label:'Ill since',               type:'date',     placeholder:'',                            req:true  },
+          { id:'to',   label:'Until (estimated)',       type:'date',     placeholder:'(optional)',                   req:false },
+          { id:'note', label:'Note / symptoms',         type:'textarea', placeholder:'e.g. cold, back pain … (optional)', req:false }
+        ]}
+      },
+      rezept: {
+        de: { label: 'Rezept anfordern', fields: [
+          { id:'name', label:'Name, Vorname',           type:'text',     placeholder:'Mustermann, Max',             req:true  },
+          { id:'dob',  label:'Geburtsdatum',            type:'date',     placeholder:'',                            req:true  },
+          { id:'meds', label:'Medikament(e)',           type:'textarea', placeholder:'z. B. Metformin 1000 mg, 3 × täglich', req:true  },
+          { id:'note', label:'Hinweis',                 type:'textarea', placeholder:'z. B. letztes Rezept war am … (optional)', req:false }
+        ]},
+        en: { label: 'Request prescription', fields: [
+          { id:'name', label:'Last name, First name',   type:'text',     placeholder:'Smith, John',                 req:true  },
+          { id:'dob',  label:'Date of birth',           type:'date',     placeholder:'',                            req:true  },
+          { id:'meds', label:'Medication(s)',           type:'textarea', placeholder:'e.g. Metformin 1000 mg, 3 × daily', req:true  },
+          { id:'note', label:'Note',                    type:'textarea', placeholder:'e.g. last prescription was on … (optional)', req:false }
+        ]}
+      },
+      ueberweisung: {
+        de: { label: 'Überweisung anfordern', fields: [
+          { id:'name', label:'Name, Vorname',           type:'text',     placeholder:'Mustermann, Max',             req:true  },
+          { id:'dob',  label:'Geburtsdatum',            type:'date',     placeholder:'',                            req:true  },
+          { id:'fach', label:'Fachrichtung / Zielarzt', type:'text',     placeholder:'z. B. Kardiologie, Dr. Müller', req:true  },
+          { id:'note', label:'Grund / Hinweis',         type:'textarea', placeholder:'z. B. EKG-Kontrolle, Bluthochdruck (optional)', req:false }
+        ]},
+        en: { label: 'Request referral', fields: [
+          { id:'name', label:'Last name, First name',   type:'text',     placeholder:'Smith, John',                 req:true  },
+          { id:'dob',  label:'Date of birth',           type:'date',     placeholder:'',                            req:true  },
+          { id:'fach', label:'Specialty / referred doctor', type:'text', placeholder:'e.g. Cardiology, Dr. Müller', req:true  },
+          { id:'note', label:'Reason / note',           type:'textarea', placeholder:'e.g. ECG check, high blood pressure (optional)', req:false }
+        ]}
+      },
+      befund: {
+        de: { label: 'Befund anfordern', fields: [
+          { id:'name', label:'Name, Vorname',           type:'text',     placeholder:'Mustermann, Max',             req:true  },
+          { id:'dob',  label:'Geburtsdatum',            type:'date',     placeholder:'',                            req:true  },
+          { id:'what', label:'Welcher Befund?',         type:'text',     placeholder:'z. B. Laborwerte vom 12.05.', req:true  },
+          { id:'note', label:'Hinweis',                 type:'textarea', placeholder:'z. B. für Rentenantrag, Arbeitgeber … (optional)', req:false }
+        ]},
+        en: { label: 'Request medical report', fields: [
+          { id:'name', label:'Last name, First name',   type:'text',     placeholder:'Smith, John',                 req:true  },
+          { id:'dob',  label:'Date of birth',           type:'date',     placeholder:'',                            req:true  },
+          { id:'what', label:'Which report?',           type:'text',     placeholder:'e.g. lab results from 12 May', req:true  },
+          { id:'note', label:'Note',                    type:'textarea', placeholder:'e.g. for pension application … (optional)', req:false }
+        ]}
+      },
+      dokumente: {
+        de: { label: 'Dokumente hochladen', fields: [
+          { id:'name',    label:'Name, Vorname',        type:'text',     placeholder:'Mustermann, Max',             req:true  },
+          { id:'dob',     label:'Geburtsdatum',         type:'date',     placeholder:'',                            req:true  },
+          { id:'doctype', label:'Art des Dokuments',    type:'text',     placeholder:'z. B. Entlassbrief, Vorbefund', req:true },
+          { id:'note',    label:'Hinweis',              type:'textarea', placeholder:'z. B. von welcher Klinik, Datum (optional)', req:false }
+        ]},
+        en: { label: 'Upload documents', fields: [
+          { id:'name',    label:'Last name, First name',type:'text',     placeholder:'Smith, John',                 req:true  },
+          { id:'dob',     label:'Date of birth',        type:'date',     placeholder:'',                            req:true  },
+          { id:'doctype', label:'Document type',        type:'text',     placeholder:'e.g. discharge letter, previous findings', req:true },
+          { id:'note',    label:'Note',                 type:'textarea', placeholder:'e.g. from which clinic, date (optional)', req:false }
+        ]}
+      }
+    };
+
+    /* ── Hilfsfunktionen ── */
+    function t(key) { return T[lang][key]; }
+    function flowDef() { return FLOWS[currentFlow][lang]; }
+
+    function setStep(n) {
+      [0,1,2].forEach(function(i) {
+        document.getElementById('shStep'+i).classList.toggle('active', i===n);
+      });
+    }
+
+    function showList() {
+      document.getElementById('shList').style.display = '';
+      document.getElementById('shFlow').classList.remove('active');
+    }
+
+    function showFlow() {
+      document.getElementById('shList').style.display = 'none';
+      document.getElementById('shFlow').classList.add('active');
+    }
+
+    function applyStepTexts() {
+      document.getElementById('shPatQ').textContent   = t('patQ');
+      document.getElementById('shPatSub').textContent = t('patSub');
+      document.getElementById('shNoBtn').textContent  = t('no');
+      document.getElementById('shYesBtn').textContent = t('yes');
+      document.getElementById('shSubmitBtn').textContent = t('submit');
+      document.getElementById('shConfTitle').textContent = t('confTitle');
+      document.getElementById('shConfTxt').textContent   = t('confTxt');
+      document.getElementById('shDoctolibBtnTxt').textContent = t('docBtn');
+      document.getElementById('shNewReqBtn').textContent = t('newReq');
+      document.getElementById('shConfNote').textContent  = t('confNote');
+    }
+
+    /* ── Öffentliche API ── */
+    return {
+
+      setLang: function(l) {
+        lang = l;
+        var wrap = document.getElementById('shWrap');
+        wrap.classList.toggle('lang-de', l==='de');
+        wrap.classList.toggle('lang-en', l==='en');
+        document.getElementById('shLangDe').classList.toggle('active', l==='de');
+        document.getElementById('shLangEn').classList.toggle('active', l==='en');
+        // If a flow is open, refresh title + form
+        if (currentFlow) {
+          document.getElementById('shFlowTitle').textContent = flowDef().label;
+          // Re-render form if on step 1
+          if (document.getElementById('shStep1').classList.contains('active')) {
+            SH.isPatient();
+          }
+        }
+        applyStepTexts();
+      },
+
+      open: function(flowKey) {
+        currentFlow = flowKey;
+        applyStepTexts();
+        document.getElementById('shFlowTitle').textContent = flowDef().label;
+        document.getElementById('shNotfall').classList.remove('open');
+        showFlow();
+        setStep(0);
+      },
+
+      back: function() {
+        var s1 = document.getElementById('shStep1').classList.contains('active');
+        var s2 = document.getElementById('shStep2').classList.contains('active');
+        if (s2 || s1) {
+          setStep(0);
+        } else {
+          showList();
+          currentFlow = null;
+        }
+      },
+
+      isPatient: function() {
+        var def = flowDef();
+        var container = document.getElementById('shFormFields');
+        container.innerHTML = '';
+        def.fields.forEach(function(f) {
+          var wrap = document.createElement('div');
+          wrap.className = 'sh-field';
+          var lbl = document.createElement('label');
+          lbl.className = 'sh-label';
+          lbl.setAttribute('for', 'shf_'+f.id);
+          lbl.innerHTML = f.label + (f.req ? '<span class="sh-req">*</span>' : '');
+          wrap.appendChild(lbl);
+          var el;
+          if (f.type === 'textarea') {
+            el = document.createElement('textarea');
+            el.className = 'sh-textarea';
+            el.placeholder = f.placeholder || '';
+            el.rows = 3;
+          } else {
+            el = document.createElement('input');
+            el.type = f.type;
+            el.className = 'sh-input';
+            if (f.placeholder && f.placeholder !== '(optional)') el.placeholder = f.placeholder;
+          }
+          el.id = 'shf_'+f.id;
+          el.name = f.id;
+          if (f.req) el.required = true;
+          wrap.appendChild(el);
+          container.appendChild(wrap);
+        });
+        document.getElementById('shSubmitBtn').textContent = t('submit');
+        setStep(1);
+      },
+
+      notPatient: function() {
+        window.open(DOCTOLIB, '_blank', 'noopener');
+      },
+
+      submit: function(e) {
+        e.preventDefault();
+        var def = flowDef();
+        var box = document.getElementById('shConfBox');
+        box.innerHTML = '';
+        def.fields.forEach(function(f) {
+          var el = document.getElementById('shf_'+f.id);
+          var val = el ? el.value.trim() : '';
+          if (!val) return;
+          var row = document.createElement('div');
+          row.className = 'sh-confirm-row';
+          var cleanLabel = f.label.replace(/\s*\(optional\)$/i,'');
+          row.innerHTML = '<span class="sh-confirm-key">'+cleanLabel+'</span><span class="sh-confirm-val">'+val+'</span>';
+          box.appendChild(row);
+        });
+        document.getElementById('shConfTitle').textContent = t('confTitle');
+        document.getElementById('shConfTxt').textContent   = t('confTxt');
+        document.getElementById('shDoctolibBtnTxt').textContent = t('docBtn');
+        document.getElementById('shNewReqBtn').textContent = t('newReq');
+        document.getElementById('shConfNote').textContent  = t('confNote');
+        setStep(2);
+        return false;
+      },
+
+      reset: function() {
+        currentFlow = null;
+        showList();
+        setStep(0);
+      }
+
+    };
+  })();
+
+  /* ── Widget öffnen/schließen ── */
+  function toggleSH() {
+    var p = document.getElementById('shPanel');
+    var b = document.getElementById('shBtn');
+    var opening = p.hidden;
+    p.hidden = !opening;
+    if (!opening) {
+      document.getElementById('shNotfall').classList.remove('open');
+    }
+  }
+  function toggleNotfall() {
+    document.getElementById('shNotfall').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    var wrap = document.getElementById('shWrap');
+    if (wrap && !wrap.contains(e.target)) {
+      var p = document.getElementById('shPanel');
+      if (p && !p.hidden) {
+        p.hidden = true;
+        document.getElementById('shNotfall').classList.remove('open');
+      }
+    }
+  });
+  </script>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobMenu');
+      const burger = document.getElementById('burger');
+      if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+    document.querySelectorAll('#mobMenu a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobMenu').classList.remove('open'));
+    });
+  </script>
+
+  <script>
+  /* ── Öffnungszeiten-Badge Dr. Juchert ── */
+  (function() {
+    var now = new Date();
+    var Y = now.getFullYear(), M = now.getMonth()+1, D = now.getDate();
+    var wd = now.getDay(); // 0=So 1=Mo 2=Di 3=Mi 4=Do 5=Fr 6=Sa
+    var cm = now.getHours()*60 + now.getMinutes();
+
+    /* Oster-Algorithmus (Gregorianisch) */
+    function easter(y) {
+      var a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,
+          f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),
+          h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,
+          l=(32+2*e+2*i-h-k)%7,
+          m=Math.floor((a+11*h+22*l)/451),
+          mo=Math.floor((h+l-7*m+114)/31),
+          dy=((h+l-7*m+114)%31)+1;
+      return new Date(y,mo-1,dy);
+    }
+    function add(d,n){ var r=new Date(d); r.setDate(r.getDate()+n); return r; }
+    function is(date){ return D===date.getDate()&&M===(date.getMonth()+1)&&Y===date.getFullYear(); }
+    function fix(d,m){ return D===d&&M===m; }
+
+    var E   = easter(Y);
+    var KF  = add(E,-2);   /* Karfreitag            */
+    var OM  = add(E, 1);   /* Ostermontag           */
+    var HF  = add(E,39);   /* Christi Himmelfahrt   */
+    var PSo = add(E,49);   /* Pfingstsonntag        */
+    var PMo = add(E,50);   /* Pfingstmontag         */
+    var FL  = add(E,60);   /* Fronleichnam (Bayern) */
+
+    /* Feiertage – { n: Name, g: Gruß (optional) }
+       Reihenfolge: zuerst geprüft gewinnt */
+    var ft = null;
+
+    /* Fixe mit Gruß */
+    if (fix(24,12)) ft={ n:'Heiligabend',           g:'Frohe Weihnachten!' };
+    if (fix(25,12)) ft={ n:'1. Weihnachtstag',       g:'Frohe Weihnachten!' };
+    if (fix(26,12)) ft={ n:'2. Weihnachtstag',       g:'Frohe Weihnachten!' };
+    if (fix(31,12)) ft={ n:'Silvester',              g:'Guten Rutsch ins neue Jahr!' };
+    if (fix( 1, 1)) ft={ n:'Neujahr',                g:'Frohes neues Jahr!' };
+    /* Bayerische mit Gruß */
+    if (fix( 6, 1)) ft={ n:'Heilige Drei Könige' };
+    /* Bewegliche mit Gruß */
+    if (is(KF))     ft={ n:'Karfreitag',             g:'Schöne Ostertage!' };
+    if (is(E))      ft={ n:'Ostersonntag',           g:'Frohe Ostern!' };
+    if (is(OM))     ft={ n:'Ostermontag',            g:'Frohe Ostern!' };
+    if (is(HF))     ft={ n:'Christi Himmelfahrt' };
+    if (is(PSo))    ft={ n:'Pfingstsonntag' };
+    if (is(PMo))    ft={ n:'Pfingstmontag' };
+    if (is(FL))     ft={ n:'Fronleichnam' };
+    /* Weitere fixe bundesweit/Bayern */
+    if (fix( 1, 5)) ft={ n:'Tag der Arbeit' };
+    if (fix(15, 8)) ft={ n:'Mariä Himmelfahrt' };
+    if (fix( 3,10)) ft={ n:'Tag der Deutschen Einheit' };
+    if (fix( 1,11)) ft={ n:'Allerheiligen' };
+
+    var badge = document.getElementById('oz-badge');
+    var btxt  = document.getElementById('bz-text');
+    var bgrt  = document.getElementById('bz-greet');
+    if (!badge) return;
+
+    function show(cls, text, greet) {
+      badge.className = 'oz-badge show '+cls;
+      btxt.textContent = text;
+      bgrt.textContent = greet ? ' — '+greet : '';
+    }
+
+    /* Feiertag */
+    if (ft) { show('holiday', 'Heute geschlossen · '+ft.n, ft.g||''); return; }
+
+    /* Wochenende */
+    if (wd===0||wd===6) { show('closed','Heute geschlossen · Wochenende',''); return; }
+
+    /* Öffnungszeiten Dr. Juchert
+       Mo(1) Mi(3) Fr(5): 08:00–12:30
+       Di(2) Do(4):       08:00–12:30 + 16:00–18:00  */
+    var mVon=480, mBis=750, aVon=960, aBis=1080; /* in Minuten */
+
+    var offen=false, bisText='';
+    if ([1,3,5].indexOf(wd)!==-1) {
+      if (cm>=mVon&&cm<mBis) { offen=true; bisText='bis 12:30 Uhr'; }
+    } else if ([2,4].indexOf(wd)!==-1) {
+      if (cm>=mVon&&cm<mBis) { offen=true; bisText='bis 12:30 Uhr'; }
+      else if (cm>=aVon&&cm<aBis) { offen=true; bisText='bis 18:00 Uhr'; }
+    }
+
+    if (offen) {
+      show('open', 'Jetzt geöffnet · '+bisText, '');
+    } else {
+      /* Nächste Öffnungszeit ermitteln */
+      var next='';
+      var days=['So','Mo','Di','Mi','Do','Fr','Sa'];
+      var nwd=wd, tries=0;
+      while(tries<7) {
+        nwd=(nwd+1)%7; tries++;
+        if (nwd===0||nwd===6) continue; /* Wochenende */
+        next='Öffnet '+days[nwd]+' um 08:00 Uhr';
+        break;
+      }
+      /* Nachmittagspause Di/Do – kommt die Abendsprechstunde noch? */
+      if ([2,4].indexOf(wd)!==-1&&cm>=mBis&&cm<aVon) {
+        next='Öffnet heute wieder um 16:00 Uhr';
+      }
+      show('closed','Geschlossen'+(next?' · '+next:''),'');
+    }
+  })();
+  </script>
+
+  <!-- ══════════════════════════════════════════════════════════
+       TAWK.TO LIVE-CHAT
+       Konto anlegen: https://www.tawk.to (kostenlos)
+       Dann IHRE_PROPERTY_ID und WIDGET_ID unten ersetzen.
+       ══════════════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════
+       COOKIE-BANNER (DSGVO / §25 TDDDG)
+       ══════════════════════════════════════════ -->
+  <style>
+    /* ── Banner (unten) ── */
+    .ck-overlay { position: fixed; inset: 0; background: rgba(17,31,24,0.48); z-index: 9000; display: none; align-items: flex-end; justify-content: center; backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+    .ck-overlay.ck-open { display: flex; }
+    .ck-banner { background: var(--white); border-radius: 20px 20px 0 0; padding: 28px 32px 28px; width: 100%; max-width: 700px; box-shadow: 0 -8px 40px rgba(0,0,0,0.13); animation: ckUp .22s ease; }
+    @keyframes ckUp { from { transform: translateY(36px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .ck-icon { width: 44px; height: 44px; background: var(--sage-pale); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 13px; }
+    .ck-title { font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+    .ck-lead { font-size: 0.84rem; color: var(--txt-mid); line-height: 1.65; margin-bottom: 20px; }
+    .ck-lead a { color: var(--sage); text-decoration: underline; }
+    .ck-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ck-all  { flex: 1; min-width: 160px; padding: 12px 22px; background: var(--sage); color: #fff; border: none; border-radius: 100px; font-family: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: background .15s; }
+    .ck-all:hover  { background: #4a7050; }
+    .ck-nec  { flex: 1; min-width: 130px; padding: 12px 22px; background: var(--warm); color: var(--txt); border: 1.5px solid var(--rule); border-radius: 100px; font-family: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background .15s; }
+    .ck-nec:hover  { background: var(--sand); }
+    .ck-cfg  { padding: 12px 18px; background: none; color: var(--sage); border: 1.5px solid var(--sage); border-radius: 100px; font-family: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all .15s; white-space: nowrap; }
+    .ck-cfg:hover  { background: var(--sage-pale); }
+
+    /* ── Modal ── */
+    .ck-modal-bg { position: fixed; inset: 0; background: rgba(17,31,24,0.52); z-index: 9100; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+    .ck-modal-bg.ck-open { display: flex; }
+    .ck-modal { background: var(--white); border-radius: 20px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 64px rgba(0,0,0,0.2); display: flex; flex-direction: column; }
+    .ck-mhead { padding: 20px 24px 16px; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--white); z-index: 2; flex-shrink: 0; }
+    .ck-mhead-title { font-size: 1.02rem; font-weight: 800; color: var(--ink); }
+    .ck-mclose { background: var(--warm); border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 0.9rem; color: var(--txt-mid); display: flex; align-items: center; justify-content: center; transition: background .12s; flex-shrink: 0; }
+    .ck-mclose:hover { background: var(--sand); color: var(--dark); }
+    .ck-mbody { padding: 0 24px; overflow-y: auto; flex: 1; }
+    .ck-mintro { font-size: 0.8rem; color: var(--txt-mid); line-height: 1.65; padding: 14px 0 14px; border-bottom: 1px solid var(--rule); margin-bottom: 2px; }
+    .ck-mintro a { color: var(--sage); }
+
+    /* ── Kategorie ── */
+    .ck-cat { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .ck-cat:last-of-type { border-bottom: none; }
+    .ck-chead { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 8px; }
+    .ck-cname { font-size: 0.88rem; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .ck-badge { font-size: 0.62rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
+    .ck-badge-req { background: var(--sage-pale); color: var(--sage); }
+    .ck-badge-opt { background: var(--warm); color: var(--txt-light); border: 1px solid var(--rule); }
+    .ck-badge-off { background: #fff3e0; color: #b45309; border: 1px solid #fde68a; }
+    .ck-cdesc { font-size: 0.78rem; color: var(--txt-mid); line-height: 1.55; margin-top: 3px; }
+
+    /* ── Toggle ── */
+    .ck-tgl { position: relative; width: 44px; height: 25px; flex-shrink: 0; margin-top: 2px; }
+    .ck-tgl input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .ck-tgl-sl { position: absolute; inset: 0; background: #d1d5db; border-radius: 25px; cursor: pointer; transition: background .2s; }
+    .ck-tgl-sl::before { content: ''; position: absolute; width: 19px; height: 19px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,0.22); }
+    .ck-tgl input:checked + .ck-tgl-sl { background: var(--sage); }
+    .ck-tgl input:checked + .ck-tgl-sl::before { transform: translateX(19px); }
+    .ck-tgl input:disabled + .ck-tgl-sl { background: var(--sage); opacity: 0.6; cursor: not-allowed; }
+
+    /* ── Detail-Items ── */
+    .ck-ditem { background: var(--warm); border-radius: 10px; padding: 10px 13px; margin-bottom: 6px; }
+    .ck-dname { font-size: 0.78rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+    .ck-drow { display: flex; gap: 8px; font-size: 0.71rem; color: var(--txt-mid); margin-bottom: 2px; line-height: 1.4; }
+    .ck-dlabel { font-weight: 600; color: var(--txt); min-width: 90px; flex-shrink: 0; }
+    .ck-drow a { color: var(--sage); word-break: break-all; }
+
+    /* ── Modal-Footer ── */
+    .ck-mfoot { padding: 14px 24px 20px; border-top: 1px solid var(--rule); display: flex; gap: 10px; position: sticky; bottom: 0; background: var(--white); flex-shrink: 0; }
+    .ck-msave { flex: 1; padding: 12px 20px; background: var(--sage); color: #fff; border: none; border-radius: 100px; font-family: inherit; font-size: 0.86rem; font-weight: 700; cursor: pointer; transition: background .15s; }
+    .ck-msave:hover { background: #4a7050; }
+    .ck-mnec  { padding: 12px 16px; background: none; color: var(--txt-mid); border: 1.5px solid var(--rule); border-radius: 100px; font-family: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all .15s; }
+    .ck-mnec:hover { border-color: var(--sage); color: var(--sage); }
+
+    /* ── Wiederöffner ── */
+    .ck-reopen { position: fixed; bottom: 24px; left: 24px; z-index: 400; background: var(--white); border: 1px solid var(--rule); border-radius: 100px; padding: 8px 14px 8px 11px; display: none; align-items: center; gap: 7px; font-family: inherit; font-size: 0.72rem; font-weight: 600; color: var(--txt-mid); cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: box-shadow .15s, color .15s; }
+    .ck-reopen:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.12); color: var(--dark); }
+    .ck-reopen.ck-show { display: flex; }
+
+    /* ── Responsive ── */
+    @media (max-width: 599px) {
+      .ck-banner { padding: 22px 18px 22px; border-radius: 18px 18px 0 0; }
+      .ck-btns { flex-direction: column; }
+      .ck-all, .ck-nec, .ck-cfg { min-width: 0; width: 100%; text-align: center; }
+      .ck-modal { border-radius: 18px; max-height: 92vh; }
+      .ck-mhead { padding: 16px 18px 13px; }
+      .ck-mbody { padding: 0 18px; }
+      .ck-mfoot { padding: 12px 18px 16px; flex-direction: column; }
+      .ck-mnec { text-align: center; }
+      .ck-reopen { bottom: 80px; left: 14px; }
+    }
+    @media (max-width: 399px) {
+      .ck-reopen { display: none !important; }
+    }
+  </style>
+
+  <!-- Banner-Overlay -->
+  <div class="ck-overlay" id="ckBanner">
+    <div class="ck-banner">
+      <div class="ck-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4"/><circle cx="8.5" cy="8.5" r=".5" fill="var(--sage)"/><circle cx="16" cy="15.5" r=".5" fill="var(--sage)"/><circle cx="12" cy="12" r=".5" fill="var(--sage)"/></svg>
+      </div>
+      <div class="ck-title">Wir verwenden Cookies &amp; externe Dienste</div>
+      <div class="ck-lead">Diese Website nutzt technisch notwendige Speicher sowie optionale externe Dienste (Google Fonts). Sie entscheiden, was Sie erlauben. Details finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</div>
+      <div class="ck-btns">
+        <button class="ck-all" onclick="CK.acceptAll()">Alle akzeptieren</button>
+        <button class="ck-nec" onclick="CK.acceptNecessary()">Nur notwendige</button>
+        <button class="ck-cfg" onclick="CK.openModal()">Einstellungen anpassen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Einstellungs-Modal -->
+  <div class="ck-modal-bg" id="ckModal">
+    <div class="ck-modal" role="dialog" aria-modal="true" aria-label="Cookie-Einstellungen">
+      <div class="ck-mhead">
+        <div class="ck-mhead-title">Cookie-Einstellungen</div>
+        <button class="ck-mclose" onclick="CK.closeModal()" aria-label="Schließen">✕</button>
+      </div>
+      <div class="ck-mbody">
+        <p class="ck-mintro">Sie können hier festlegen, welche Arten von Cookies und externen Diensten diese Website verwenden darf. Technisch notwendige Funktionen sind immer aktiv. Weitere Informationen: <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+
+        <!-- 1. Notwendig -->
+        <div class="ck-cat">
+          <div class="ck-chead">
+            <div>
+              <div class="ck-cname">Technisch notwendig <span class="ck-badge ck-badge-req">Immer aktiv</span></div>
+              <div class="ck-cdesc">Ermöglichen die Grundfunktionen der Website. Dazu gehört die Speicherung Ihrer Cookie-Einwilligung in Ihrem Browser. Ohne diese Einträge können wir Ihre Datenschutzpräferenzen nicht speichern.</div>
+            </div>
+            <label class="ck-tgl" title="Immer aktiv">
+              <input type="checkbox" checked disabled>
+              <span class="ck-tgl-sl"></span>
+            </label>
+          </div>
+          <div class="ck-ditem">
+            <div class="ck-dname">Cookie-Einwilligung</div>
+            <div class="ck-drow"><span class="ck-dlabel">Anbieter</span>Diese Website (Dr. Juchert)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Zweck</span>Speichert Ihre Cookie-Präferenz für 12 Monate</div>
+            <div class="ck-drow"><span class="ck-dlabel">Speicher</span>localStorage (lokal in Ihrem Browser, kein Server)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Ablauf</span>12 Monate bzw. bis zur manuellen Löschung</div>
+          </div>
+        </div>
+
+        <!-- 2. Komfort / Google Fonts -->
+        <div class="ck-cat">
+          <div class="ck-chead">
+            <div>
+              <div class="ck-cname">Komfort &amp; Design <span class="ck-badge ck-badge-opt">Optional</span></div>
+              <div class="ck-cdesc">Lädt externe Schriftarten von Google-Servern für ein einheitliches Erscheinungsbild. Dabei wird beim Seitenaufruf Ihre IP-Adresse an Google LLC (USA) übertragen. Bei Ablehnung werden systemseitige Schriften angezeigt.</div>
+            </div>
+            <label class="ck-tgl">
+              <input type="checkbox" id="ckToggleKomfort">
+              <span class="ck-tgl-sl"></span>
+            </label>
+          </div>
+          <div class="ck-ditem">
+            <div class="ck-dname">Google Fonts (Webschriften)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Anbieter</span>Google LLC, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA</div>
+            <div class="ck-drow"><span class="ck-dlabel">Zweck</span>Einbindung der Schriftart „Plus Jakarta Sans"</div>
+            <div class="ck-drow"><span class="ck-dlabel">Daten</span>IP-Adresse, Browser-Typ, Uhrzeit des Abrufs</div>
+            <div class="ck-drow"><span class="ck-dlabel">Übertragung</span>USA (Google LLC, SCCs / Data Privacy Framework)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Ablauf</span>Sitzungscookies bei Google; bei Ablehnung kein Abruf</div>
+            <div class="ck-drow"><span class="ck-dlabel">Datenschutz</span><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
+          </div>
+        </div>
+
+        <!-- 3. Live-Chat -->
+        <div class="ck-cat">
+          <div class="ck-chead">
+            <div>
+              <div class="ck-cname">Live-Chat <span class="ck-badge ck-badge-off">Aktuell inaktiv</span></div>
+              <div class="ck-cdesc">Ein Live-Chat-Dienst (Tawk.to) ist technisch vorbereitet, aber noch nicht aktiviert. Sobald die Praxis diesen freischaltet, setzt Tawk.to Cookies zur Chat-Sitzungsverwaltung. Ihre Einwilligung wird berücksichtigt.</div>
+            </div>
+            <label class="ck-tgl">
+              <input type="checkbox" id="ckToggleChat">
+              <span class="ck-tgl-sl"></span>
+            </label>
+          </div>
+          <div class="ck-ditem">
+            <div class="ck-dname">Tawk.to Live-Chat</div>
+            <div class="ck-drow"><span class="ck-dlabel">Anbieter</span>Tawk.to Inc., Nevada, USA</div>
+            <div class="ck-drow"><span class="ck-dlabel">Zweck</span>Echtzeit-Chat zwischen Patient und Praxis</div>
+            <div class="ck-drow"><span class="ck-dlabel">Status</span>Noch nicht freigeschaltet — Einwilligung wird gespeichert</div>
+            <div class="ck-drow"><span class="ck-dlabel">Datenschutz</span><a href="https://www.tawk.to/privacy-policy/" target="_blank" rel="noopener">tawk.to/privacy-policy</a></div>
+          </div>
+        </div>
+      </div><!-- /ck-mbody -->
+
+      <div class="ck-mfoot">
+        <button class="ck-msave" onclick="CK.saveSettings()">Auswahl speichern &amp; schließen</button>
+        <button class="ck-mnec" onclick="CK.acceptNecessary()">Nur notwendige</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wiederöffner (erscheint nach erster Wahl) -->
+  <button class="ck-reopen" id="ckReopen" onclick="CK.openModal()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4"/><circle cx="8.5" cy="8.5" r=".4" fill="currentColor"/><circle cx="16" cy="15.5" r=".4" fill="currentColor"/><circle cx="12" cy="12" r=".4" fill="currentColor"/></svg>
+    Cookie-Einstellungen
+  </button>
+
+  <script>
+  var CK = {
+    KEY: 'drj_cookie_consent',
+    VER: '1.1',
+
+    _get: function() {
+      try { var d = localStorage.getItem(this.KEY); return d ? JSON.parse(d) : null; } catch(e) { return null; }
+    },
+    _set: function(p) {
+      try { localStorage.setItem(this.KEY, JSON.stringify({ v: this.VER, ts: Date.now(), necessary: true, komfort: !!p.komfort, chat: !!p.chat })); } catch(e) {}
+    },
+
+    acceptAll: function() {
+      this._set({ komfort: true, chat: true });
+      this._hideBanner(); this._apply(); this._showReopen();
+    },
+    acceptNecessary: function() {
+      this._set({ komfort: false, chat: false });
+      this._hideBanner(); this.closeModal(); this._apply(); this._showReopen();
+    },
+    saveSettings: function() {
+      var k = document.getElementById('ckToggleKomfort').checked;
+      var c = document.getElementById('ckToggleChat').checked;
+      this._set({ komfort: k, chat: c });
+      this._hideBanner(); this.closeModal(); this._apply(); this._showReopen();
+    },
+
+    openModal: function() {
+      var p = this._get();
+      document.getElementById('ckToggleKomfort').checked = p ? !!p.komfort : true;
+      document.getElementById('ckToggleChat').checked    = p ? !!p.chat    : false;
+      document.getElementById('ckModal').classList.add('ck-open');
+      document.body.style.overflow = 'hidden';
+    },
+    closeModal: function() {
+      document.getElementById('ckModal').classList.remove('ck-open');
+      document.body.style.overflow = '';
+    },
+
+    _hideBanner: function() {
+      document.getElementById('ckBanner').classList.remove('ck-open');
+      document.body.style.overflow = '';
+    },
+    _showReopen: function() {
+      document.getElementById('ckReopen').classList.add('ck-show');
+    },
+
+    _apply: function() {
+      var p = this._get();
+      if (!p) return;
+      /* Google Fonts — nur laden wenn Einwilligung und noch nicht geladen */
+      if (p.komfort && !document.getElementById('gf-link')) {
+        var pre = document.createElement('link');
+        pre.rel = 'preconnect'; pre.href = 'https://fonts.googleapis.com';
+        document.head.appendChild(pre);
+        var lnk = document.createElement('link');
+        lnk.id = 'gf-link'; lnk.rel = 'stylesheet';
+        lnk.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap';
+        document.head.appendChild(lnk);
+      }
+      /* Tawk.to — wird berücksichtigt wenn Praxis Property-ID einträgt */
+    },
+
+    init: function() {
+      var p = this._get();
+      if (!p || p.v !== this.VER) {
+        /* Erstbesuch oder veraltete Version → Banner zeigen */
+        document.getElementById('ckBanner').classList.add('ck-open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        this._apply();
+        this._showReopen();
+      }
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', function() { CK.init(); });
+  </script>
+
+  <!-- ══════════════════════════════════════════ -->
+
+  <script type="text/javascript">
+  var Tawk_API = Tawk_API || {};
+  Tawk_API.onLoad = function() {
+    Tawk_API.hideWidget(); // Tawk.to-Standardbutton verstecken — Chat wird über Praxis-Service-Widget gesteuert
+  };
+  var Tawk_LoadStart = new Date();
+  (function(){
+    var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src   = 'https://embed.tawk.to/IHRE_PROPERTY_ID/WIDGET_ID';
+    /* ↑ HIER ersetzen: nach tawk.to-Login → Administration → Chat Widget → Embed-Code */
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+  </script>
+</body>
+</html>

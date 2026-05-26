@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Dr. med. Natascha Juchert | Hausarztpraxis Forstenried</title>
+  <meta name="description" content="Impressum der Hausarztpraxis Forstenried – Dr. med. Natascha Juchert, Fritz-Baer-Straße 1, 81476 München. Pflichtangaben gemäß §5 TMG.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── CSS-Variablen ── */
+    :root {
+      --dark: #111f18;
+      --ink: #1a2e22;
+      --sage: #5A8560;
+      --sage-pale: #EBF4EC;
+      --rust: #8B3E22;
+      --rust-pale: #FAE8DF;
+      --rust-lt: #c97a5e;
+      --warm: #FDFAF6;
+      --white: #ffffff;
+      --sand: #e4ddd3;
+      --rule: rgba(0,0,0,0.07);
+      --txt: #374151;
+      --txt-mid: #6B7280;
+      --txt-light: #9CA3AF;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+    body { overflow-x: hidden; max-width: 100%; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--warm); color: var(--txt); line-height: 1.7; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      padding: 0 40px; height: 68px;
+    }
+    .nav-brand { text-decoration: none; display: flex; flex-direction: column; }
+    .nav-name { font-size: .95rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .nav-sub { font-size: .75rem; color: var(--txt-mid); }
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links a { text-decoration: none; font-size: .88rem; font-weight: 500; color: var(--txt); transition: color .2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      background: var(--sage); color: var(--white) !important;
+      padding: .45rem 1.1rem; border-radius: 6px;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--ink) !important; }
+    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .burger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: .25s; }
+    .mob-menu {
+      display: none; flex-direction: column; gap: .2rem;
+      position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      padding: 1rem 1.5rem 1.4rem;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { text-decoration: none; font-size: .95rem; font-weight: 500; color: var(--txt); padding: .55rem 0; border-bottom: 1px solid var(--rule); }
+    .mob-menu a:last-child { border-bottom: none; }
+    .mob-cta-m { background: var(--sage); color: var(--white) !important; text-align: center; border-radius: 6px; padding: .7rem 1rem !important; margin-top: .5rem; border-bottom: none !important; }
+
+    /* ── Content ── */
+    .page-wrap {
+      max-width: 820px; margin: 0 auto; padding: 80px 40px 100px;
+    }
+    .page-title {
+      font-size: 2.2rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; line-height: 1.2;
+    }
+    .page-intro {
+      font-size: 1rem; color: var(--txt-mid); margin-bottom: 3rem; border-bottom: 1px solid var(--rule); padding-bottom: 2rem;
+    }
+    .s-tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--sage); background: var(--sage-pale);
+      border-radius: 4px; padding: .2rem .6rem; margin-bottom: .8rem;
+    }
+    h2 { font-size: 1.35rem; font-weight: 700; color: var(--ink); margin-bottom: .9rem; line-height: 1.3; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 1.4rem 0 .5rem; }
+    p { margin-bottom: .9rem; font-size: .96rem; }
+    a { color: var(--sage); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .section { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); }
+    .section:last-child { border-bottom: none; }
+    address { font-style: normal; }
+    address p { margin-bottom: .3rem; }
+
+    /* ── Footer ── */
+    footer { background: var(--ink); color: var(--white); padding: 2.5rem 40px; }
+    .foot-top { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+    .foot-name { font-size: 1rem; font-weight: 700; margin-bottom: .25rem; }
+    .foot-sub { font-size: .82rem; color: rgba(255,255,255,.6); margin-bottom: .2rem; }
+    .foot-copy { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: .5rem; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: center; }
+    .foot-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .82rem; transition: color .2s; }
+    .foot-links a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1023px) {
+      .page-wrap { padding: 60px 30px 80px; }
+    }
+    @media (max-width: 767px) {
+      nav { padding: 0 20px; height: 52px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .mob-menu { top: 52px; }
+      .page-wrap { padding: 44px 1.25rem 60px; }
+      .page-title { font-size: 1.65rem; }
+      footer { padding: 2rem 1.25rem; }
+      .foot-links { gap: .6rem 1.1rem; }
+    }
+    @media (max-width: 479px) {
+      .page-wrap { padding: 32px 1rem 48px; }
+      .page-title { font-size: 1.4rem; }
+      h2 { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-name">Dr. med. Natascha Juchert</span>
+    <span class="nav-sub">Hausarztpraxis Forstenried</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#team">Team</a></li>
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="index.html#sprechzeiten">Sprechzeiten</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+    <li><a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="nav-cta">Termin buchen</a></li>
+  </ul>
+  <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html#team">Team</a>
+  <a href="index.html#leistungen">Leistungen</a>
+  <a href="index.html#sprechzeiten">Sprechzeiten</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="tel:089751208">089 / 75 12 08</a>
+  <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="mob-cta-m">Termin online buchen</a>
+</div>
+
+<!-- Content -->
+<main class="page-wrap">
+
+  <h1 class="page-title">Impressum</h1>
+  <p class="page-intro">Pflichtangaben gemäß § 5 TMG und § 55 RStV</p>
+
+  <!-- 1. Angaben gemäß § 5 TMG -->
+  <div class="section">
+    <div class="s-tag">§ 5 TMG</div>
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <address>
+      <p><strong>Dr. med. Natascha Juchert</strong></p>
+      <p>Hausarztpraxis Forstenried (Gemeinschaftspraxis)</p>
+      <p>Fritz-Baer-Straße 1</p>
+      <p>81476 München</p>
+    </address>
+    <h3>Kontakt</h3>
+    <p>
+      Telefon: <a href="tel:089751208">089 / 75 12 08</a><br>
+      Fax: 089 / 75 46 73<br>
+      E-Mail: <a href="mailto:info@dr-juchert.de">info@dr-juchert.de</a>
+    </p>
+  </div>
+
+  <!-- 2. Berufsrechtliche Angaben -->
+  <div class="section">
+    <div class="s-tag">Berufsrecht</div>
+    <h2>Berufsrechtliche Angaben</h2>
+    <h3>Berufsbezeichnung</h3>
+    <p>Ärztin / Fachärztin für Allgemeinmedizin<br>
+    (Berufsbezeichnung verliehen in der Bundesrepublik Deutschland)</p>
+
+    <h3>Zuständige Ärztekammer</h3>
+    <address>
+      <p>Bayerische Landesärztekammer (BLÄK)</p>
+      <p>Dachauer Straße 73</p>
+      <p>80335 München</p>
+      <p><a href="https://www.blaek.de" target="_blank" rel="noopener">www.blaek.de</a></p>
+    </address>
+
+    <h3>Zuständige Kassenärztliche Vereinigung</h3>
+    <address>
+      <p>Kassenärztliche Vereinigung Bayerns (KVB)</p>
+      <p>Elsenheimerstraße 39</p>
+      <p>80687 München</p>
+      <p><a href="https://www.kvb.de" target="_blank" rel="noopener">www.kvb.de</a></p>
+    </address>
+
+    <h3>Berufsordnung</h3>
+    <p>
+      Es gilt die Berufsordnung für die Ärzte Bayerns. Die Berufsordnung ist
+      abrufbar unter: <a href="https://www.blaek.de" target="_blank" rel="noopener">www.blaek.de</a>
+    </p>
+  </div>
+
+  <!-- 3. Umsatzsteuer -->
+  <div class="section">
+    <div class="s-tag">Umsatzsteuer</div>
+    <h2>Umsatzsteuerliche Angaben</h2>
+    <p>
+      Als Ärztin erbringt Dr. med. Natascha Juchert Heilbehandlungsleistungen,
+      die gemäß <strong>§ 4 Nr. 14 UStG</strong> von der Umsatzsteuer befreit sind.
+      Eine Umsatzsteuer-Identifikationsnummer (USt-IdNr.) liegt daher nicht vor.
+    </p>
+  </div>
+
+  <!-- 4. Verantwortlich nach § 55 Abs. 2 RStV -->
+  <div class="section">
+    <div class="s-tag">§ 55 RStV</div>
+    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+    <address>
+      <p>Dr. med. Natascha Juchert</p>
+      <p>Fritz-Baer-Straße 1</p>
+      <p>81476 München</p>
+    </address>
+  </div>
+
+  <!-- 5. Streitbeilegung -->
+  <div class="section">
+    <div class="s-tag">Streitbeilegung</div>
+    <h2>Streitbeilegung</h2>
+    <h3>Online-Streitbeilegung (OS)</h3>
+    <p>
+      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+      <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>
+    </p>
+    <h3>Verbraucherstreitbeilegung (VSBG)</h3>
+    <p>
+      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+      Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
+    </p>
+  </div>
+
+  <!-- 6. Haftungsausschluss -->
+  <div class="section">
+    <div class="s-tag">Haftung</div>
+    <h2>Haftungsausschluss</h2>
+    <h3>Haftung für Inhalte</h3>
+    <p>
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
+      nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+      Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+      Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+      Tätigkeit hinweisen.
+    </p>
+    <p>
+      Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
+      allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch
+      erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden
+      von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+    </p>
+    <h3>Haftung für Links</h3>
+    <p>
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss
+      haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+      Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten
+      verantwortlich.
+    </p>
+    <p>
+      Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft.
+      Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente
+      inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer
+      Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir
+      derartige Links umgehend entfernen.
+    </p>
+  </div>
+
+  <!-- 7. Urheberrecht -->
+  <div class="section">
+    <div class="s-tag">Urheberrecht</div>
+    <h2>Urheberrecht</h2>
+    <p>
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+      deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+      Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung
+      des jeweiligen Autors bzw. Erstellers.
+    </p>
+    <p>
+      Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+      Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte
+      Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie
+      trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden
+      Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+    </p>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-name">Dr. med. Natascha Juchert</div>
+      <div class="foot-sub">Hausarztpraxis Forstenried · Fritz-Baer-Straße 1 · 81476 München</div>
+      <div class="foot-copy">© 2026 · Alle Rechte vorbehalten</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html#team">Team</a>
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#sprechzeiten">Sprechzeiten</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('mobMenu');
+    m.classList.toggle('open');
+  }
+  // Schließt Menü bei Klick auf Link
+  document.querySelectorAll('.mob-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('mobMenu').classList.remove('open');
+    });
+  });
+</script>
+
+  <!-- ══════════════════════════════════════════
+       COOKIE-BANNER (DSGVO / §25 TDDDG)
+       ══════════════════════════════════════════ -->
+  <style>
+    /* ── Banner (unten) ── */
+    .ck-overlay { position: fixed; inset: 0; background: rgba(17,31,24,0.48); z-index: 9000; display: none; align-items: flex-end; justify-content: center; backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+    .ck-overlay.ck-open { display: flex; }
+    .ck-banner { background: var(--white); border-radius: 20px 20px 0 0; padding: 28px 32px 28px; width: 100%; max-width: 700px; box-shadow: 0 -8px 40px rgba(0,0,0,0.13); animation: ckUp .22s ease; }
+    @keyframes ckUp { from { transform: translateY(36px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .ck-icon { width: 44px; height: 44px; background: var(--sage-pale); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 13px; }
+    .ck-title { font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+    .ck-lead { font-size: 0.84rem; color: var(--txt-mid); line-height: 1.65; margin-bottom: 20px; }
+    .ck-lead a { color: var(--sage); text-decoration: underline; }
+    .ck-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ck-all  { flex: 1; min-width: 160px; padding: 12px 22px; background: var(--sage); color: #fff; border: none; border-radius: 100px; font-family: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: background .15s; }
+    .ck-all:hover  { background: #4a7050; }
+    .ck-nec  { flex: 1; min-width: 130px; padding: 12px 22px; background: var(--warm); color: var(--txt); border: 1.5px solid var(--rule); border-radius: 100px; font-family: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background .15s; }
+    .ck-nec:hover  { background: var(--sand); }
+    .ck-cfg  { padding: 12px 18px; background: none; color: var(--sage); border: 1.5px solid var(--sage); border-radius: 100px; font-family: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all .15s; white-space: nowrap; }
+    .ck-cfg:hover  { background: var(--sage-pale); }
+    /* ── Modal ── */
+    .ck-modal-bg { position: fixed; inset: 0; background: rgba(17,31,24,0.52); z-index: 9100; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
+    .ck-modal-bg.ck-open { display: flex; }
+    .ck-modal { background: var(--white); border-radius: 20px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 64px rgba(0,0,0,0.2); display: flex; flex-direction: column; }
+    .ck-mhead { padding: 20px 24px 16px; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--white); z-index: 2; flex-shrink: 0; }
+    .ck-mhead-title { font-size: 1.02rem; font-weight: 800; color: var(--ink); }
+    .ck-mclose { background: var(--warm); border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 0.9rem; color: var(--txt-mid); display: flex; align-items: center; justify-content: center; transition: background .12s; flex-shrink: 0; }
+    .ck-mclose:hover { background: var(--sand); color: var(--dark); }
+    .ck-mbody { padding: 0 24px; overflow-y: auto; flex: 1; }
+    .ck-mintro { font-size: 0.8rem; color: var(--txt-mid); line-height: 1.65; padding: 14px 0 14px; border-bottom: 1px solid var(--rule); margin-bottom: 2px; }
+    .ck-mintro a { color: var(--sage); }
+    /* ── Kategorie ── */
+    .ck-cat { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+    .ck-cat:last-of-type { border-bottom: none; }
+    .ck-chead { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 8px; }
+    .ck-cname { font-size: 0.88rem; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .ck-badge { font-size: 0.62rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
+    .ck-badge-req { background: var(--sage-pale); color: var(--sage); }
+    .ck-badge-opt { background: var(--warm); color: var(--txt-light); border: 1px solid var(--rule); }
+    .ck-badge-off { background: #fff3e0; color: #b45309; border: 1px solid #fde68a; }
+    .ck-cdesc { font-size: 0.78rem; color: var(--txt-mid); line-height: 1.55; margin-top: 3px; }
+    /* ── Toggle ── */
+    .ck-tgl { position: relative; width: 44px; height: 25px; flex-shrink: 0; margin-top: 2px; }
+    .ck-tgl input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .ck-tgl-sl { position: absolute; inset: 0; background: #d1d5db; border-radius: 25px; cursor: pointer; transition: background .2s; }
+    .ck-tgl-sl::before { content: ''; position: absolute; width: 19px; height: 19px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,0.22); }
+    .ck-tgl input:checked + .ck-tgl-sl { background: var(--sage); }
+    .ck-tgl input:checked + .ck-tgl-sl::before { transform: translateX(19px); }
+    .ck-tgl input:disabled + .ck-tgl-sl { background: var(--sage); opacity: 0.6; cursor: not-allowed; }
+    /* ── Detail-Items ── */
+    .ck-ditem { background: var(--warm); border-radius: 10px; padding: 10px 13px; margin-bottom: 6px; }
+    .ck-dname { font-size: 0.78rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+    .ck-drow { display: flex; gap: 8px; font-size: 0.71rem; color: var(--txt-mid); margin-bottom: 2px; line-height: 1.4; }
+    .ck-dlabel { font-weight: 600; color: var(--txt); min-width: 90px; flex-shrink: 0; }
+    .ck-drow a { color: var(--sage); word-break: break-all; }
+    /* ── Modal-Footer ── */
+    .ck-mfoot { padding: 14px 24px 20px; border-top: 1px solid var(--rule); display: flex; gap: 10px; position: sticky; bottom: 0; background: var(--white); flex-shrink: 0; }
+    .ck-msave { flex: 1; padding: 12px 20px; background: var(--sage); color: #fff; border: none; border-radius: 100px; font-family: inherit; font-size: 0.86rem; font-weight: 700; cursor: pointer; transition: background .15s; }
+    .ck-msave:hover { background: #4a7050; }
+    .ck-mnec  { padding: 12px 16px; background: none; color: var(--txt-mid); border: 1.5px solid var(--rule); border-radius: 100px; font-family: inherit; font-size: 0.82rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all .15s; }
+    .ck-mnec:hover { border-color: var(--sage); color: var(--sage); }
+    /* ── Wiederöffner ── */
+    .ck-reopen { position: fixed; bottom: 24px; left: 24px; z-index: 400; background: var(--white); border: 1px solid var(--rule); border-radius: 100px; padding: 8px 14px 8px 11px; display: none; align-items: center; gap: 7px; font-family: inherit; font-size: 0.72rem; font-weight: 600; color: var(--txt-mid); cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: box-shadow .15s, color .15s; }
+    .ck-reopen:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.12); color: var(--dark); }
+    .ck-reopen.ck-show { display: flex; }
+    /* ── Responsive ── */
+    @media (max-width: 599px) {
+      .ck-banner { padding: 22px 18px 22px; border-radius: 18px 18px 0 0; }
+      .ck-btns { flex-direction: column; }
+      .ck-all, .ck-nec, .ck-cfg { min-width: 0; width: 100%; text-align: center; }
+      .ck-modal { border-radius: 18px; max-height: 92vh; }
+      .ck-mhead { padding: 16px 18px 13px; }
+      .ck-mbody { padding: 0 18px; }
+      .ck-mfoot { padding: 12px 18px 16px; flex-direction: column; }
+      .ck-mnec { text-align: center; }
+      .ck-reopen { bottom: 80px; left: 14px; }
+    }
+    @media (max-width: 399px) {
+      .ck-reopen { display: none !important; }
+    }
+  </style>
+
+  <!-- Banner-Overlay -->
+  <div class="ck-overlay" id="ckBanner">
+    <div class="ck-banner">
+      <div class="ck-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4"/><circle cx="8.5" cy="8.5" r=".5" fill="var(--sage)"/><circle cx="16" cy="15.5" r=".5" fill="var(--sage)"/><circle cx="12" cy="12" r=".5" fill="var(--sage)"/></svg>
+      </div>
+      <div class="ck-title">Wir verwenden Cookies &amp; externe Dienste</div>
+      <div class="ck-lead">Diese Website nutzt technisch notwendige Speicher sowie optionale externe Dienste (Google Fonts). Sie entscheiden, was Sie erlauben. Details finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</div>
+      <div class="ck-btns">
+        <button class="ck-all" onclick="CK.acceptAll()">Alle akzeptieren</button>
+        <button class="ck-nec" onclick="CK.acceptNecessary()">Nur notwendige</button>
+        <button class="ck-cfg" onclick="CK.openModal()">Einstellungen anpassen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Einstellungs-Modal -->
+  <div class="ck-modal-bg" id="ckModal">
+    <div class="ck-modal" role="dialog" aria-modal="true" aria-label="Cookie-Einstellungen">
+      <div class="ck-mhead">
+        <div class="ck-mhead-title">Cookie-Einstellungen</div>
+        <button class="ck-mclose" onclick="CK.closeModal()" aria-label="Schließen">✕</button>
+      </div>
+      <div class="ck-mbody">
+        <p class="ck-mintro">Sie können hier festlegen, welche Arten von Cookies und externen Diensten diese Website verwenden darf. Technisch notwendige Funktionen sind immer aktiv. Weitere Informationen: <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        <!-- 1. Notwendig -->
+        <div class="ck-cat">
+          <div class="ck-chead">
+            <div>
+              <div class="ck-cname">Technisch notwendig <span class="ck-badge ck-badge-req">Immer aktiv</span></div>
+              <div class="ck-cdesc">Ermöglichen die Grundfunktionen der Website. Dazu gehört die Speicherung Ihrer Cookie-Einwilligung in Ihrem Browser. Ohne diese Einträge können wir Ihre Datenschutzpräferenzen nicht speichern.</div>
+            </div>
+            <label class="ck-tgl" title="Immer aktiv">
+              <input type="checkbox" checked disabled>
+              <span class="ck-tgl-sl"></span>
+            </label>
+          </div>
+          <div class="ck-ditem">
+            <div class="ck-dname">Cookie-Einwilligung</div>
+            <div class="ck-drow"><span class="ck-dlabel">Anbieter</span>Diese Website (Dr. Juchert)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Zweck</span>Speichert Ihre Cookie-Präferenz für 12 Monate</div>
+            <div class="ck-drow"><span class="ck-dlabel">Speicher</span>localStorage (lokal in Ihrem Browser, kein Server)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Ablauf</span>12 Monate bzw. bis zur manuellen Löschung</div>
+          </div>
+        </div>
+        <!-- 2. Komfort / Google Fonts -->
+        <div class="ck-cat">
+          <div class="ck-chead">
+            <div>
+              <div class="ck-cname">Komfort &amp; Design <span class="ck-badge ck-badge-opt">Optional</span></div>
+              <div class="ck-cdesc">Lädt externe Schriftarten von Google-Servern für ein einheitliches Erscheinungsbild. Dabei wird beim Seitenaufruf Ihre IP-Adresse an Google LLC (USA) übertragen. Bei Ablehnung werden systemseitige Schriften angezeigt.</div>
+            </div>
+            <label class="ck-tgl">
+              <input type="checkbox" id="ckToggleKomfort">
+              <span class="ck-tgl-sl"></span>
+            </label>
+          </div>
+          <div class="ck-ditem">
+            <div class="ck-dname">Google Fonts (Webschriften)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Anbieter</span>Google LLC, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA</div>
+            <div class="ck-drow"><span class="ck-dlabel">Zweck</span>Einbindung der Schriftart „Plus Jakarta Sans"</div>
+            <div class="ck-drow"><span class="ck-dlabel">Daten</span>IP-Adresse, Browser-Typ, Uhrzeit des Abrufs</div>
+            <div class="ck-drow"><span class="ck-dlabel">Übertragung</span>USA (Google LLC, SCCs / Data Privacy Framework)</div>
+            <div class="ck-drow"><span class="ck-dlabel">Ablauf</span>Sitzungscookies bei Google; bei Ablehnung kein Abruf</div>
+            <div class="ck-drow"><span class="ck-dlabel">Datenschutz</span><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></div>
+          </div>
+        </div>
+        <!-- 3. Live-Chat -->
+        <div class="ck-cat">
+          <div class="ck-chead">
+            <div>
+              <div class="ck-cname">Live-Chat <span class="ck-badge ck-badge-off">Aktuell inaktiv</span></div>
+              <div class="ck-cdesc">Ein Live-Chat-Dienst (Tawk.to) ist technisch vorbereitet, aber noch nicht aktiviert. Sobald die Praxis diesen freischaltet, setzt Tawk.to Cookies zur Chat-Sitzungsverwaltung. Ihre Einwilligung wird berücksichtigt.</div>
+            </div>
+            <label class="ck-tgl">
+              <input type="checkbox" id="ckToggleChat">
+              <span class="ck-tgl-sl"></span>
+            </label>
+          </div>
+          <div class="ck-ditem">
+            <div class="ck-dname">Tawk.to Live-Chat</div>
+            <div class="ck-drow"><span class="ck-dlabel">Anbieter</span>Tawk.to Inc., Nevada, USA</div>
+            <div class="ck-drow"><span class="ck-dlabel">Zweck</span>Echtzeit-Chat zwischen Patient und Praxis</div>
+            <div class="ck-drow"><span class="ck-dlabel">Status</span>Noch nicht freigeschaltet — Einwilligung wird gespeichert</div>
+            <div class="ck-drow"><span class="ck-dlabel">Datenschutz</span><a href="https://www.tawk.to/privacy-policy/" target="_blank" rel="noopener">tawk.to/privacy-policy</a></div>
+          </div>
+        </div>
+      </div><!-- /ck-mbody -->
+      <div class="ck-mfoot">
+        <button class="ck-msave" onclick="CK.saveSettings()">Auswahl speichern &amp; schließen</button>
+        <button class="ck-mnec" onclick="CK.acceptNecessary()">Nur notwendige</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wiederöffner (erscheint nach erster Wahl) -->
+  <button class="ck-reopen" id="ckReopen" onclick="CK.openModal()">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4"/><circle cx="8.5" cy="8.5" r=".4" fill="currentColor"/><circle cx="16" cy="15.5" r=".4" fill="currentColor"/><circle cx="12" cy="12" r=".4" fill="currentColor"/></svg>
+    Cookie-Einstellungen
+  </button>
+
+  <script>
+  var CK = {
+    KEY: 'drj_cookie_consent',
+    VER: '1.1',
+    _get: function() {
+      try { var d = localStorage.getItem(this.KEY); return d ? JSON.parse(d) : null; } catch(e) { return null; }
+    },
+    _set: function(p) {
+      try { localStorage.setItem(this.KEY, JSON.stringify({ v: this.VER, ts: Date.now(), necessary: true, komfort: !!p.komfort, chat: !!p.chat })); } catch(e) {}
+    },
+    acceptAll: function() {
+      this._set({ komfort: true, chat: true });
+      this._hideBanner(); this._apply(); this._showReopen();
+    },
+    acceptNecessary: function() {
+      this._set({ komfort: false, chat: false });
+      this._hideBanner(); this.closeModal(); this._apply(); this._showReopen();
+    },
+    saveSettings: function() {
+      var k = document.getElementById('ckToggleKomfort').checked;
+      var c = document.getElementById('ckToggleChat').checked;
+      this._set({ komfort: k, chat: c });
+      this._hideBanner(); this.closeModal(); this._apply(); this._showReopen();
+    },
+    openModal: function() {
+      var p = this._get();
+      document.getElementById('ckToggleKomfort').checked = p ? !!p.komfort : true;
+      document.getElementById('ckToggleChat').checked    = p ? !!p.chat    : false;
+      document.getElementById('ckModal').classList.add('ck-open');
+      document.body.style.overflow = 'hidden';
+    },
+    closeModal: function() {
+      document.getElementById('ckModal').classList.remove('ck-open');
+      document.body.style.overflow = '';
+    },
+    _hideBanner: function() {
+      document.getElementById('ckBanner').classList.remove('ck-open');
+      document.body.style.overflow = '';
+    },
+    _showReopen: function() {
+      document.getElementById('ckReopen').classList.add('ck-show');
+    },
+    _apply: function() {
+      var p = this._get();
+      if (!p) return;
+      if (p.komfort && !document.getElementById('gf-link')) {
+        var pre = document.createElement('link');
+        pre.rel = 'preconnect'; pre.href = 'https://fonts.googleapis.com';
+        document.head.appendChild(pre);
+        var lnk = document.createElement('link');
+        lnk.id = 'gf-link'; lnk.rel = 'stylesheet';
+        lnk.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap';
+        document.head.appendChild(lnk);
+      }
+    },
+    init: function() {
+      var p = this._get();
+      if (!p || p.v !== this.VER) {
+        document.getElementById('ckBanner').classList.add('ck-open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        this._apply();
+        this._showReopen();
+      }
+    }
+  };
+  document.addEventListener('DOMContentLoaded', function() { CK.init(); });
+  </script>
+
+</body>
+</html>
