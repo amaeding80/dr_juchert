@@ -33,8 +33,8 @@
       --rule:      rgba(60,25,10,0.08);
     }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 64px; }
-    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--warm); color: var(--txt); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    html { scroll-behavior: smooth; overflow-x: clip; scroll-padding-top: 64px; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--warm); color: var(--txt); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: clip; }
 
     /* ── NOTICE ── */
     .notice { background: #fffbea; border-bottom: 1px solid #f0df80; padding: 12px 48px 12px 20px; font-size: 0.83rem; color: #7a5f00; display: flex; align-items: flex-start; gap: 10px; position: relative; }
@@ -54,11 +54,30 @@
     .nav-links a:hover { color: var(--rust); }
     .nav-cta { background: var(--rust) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 100px; font-weight: 700 !important; font-size: 0.83rem !important; transition: background .2s !important; }
     .nav-cta:hover { background: var(--rust-dark) !important; }
+    /* Nav portrait (mobil) */
+    .nav-portrait { display: none; width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--rust-pale); flex-shrink: 0; }
     .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
-    .burger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; display: block; }
-    .mob-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 199; flex-direction: column; padding: 24px; gap: 2px; overflow-y: auto; }
+    .burger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; display: block; transition: all .25s; }
+    .mob-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 199; flex-direction: column; padding: 0; overflow-y: auto; }
     .mob-menu.open { display: flex; }
-    .mob-menu a { color: var(--txt); text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    /* Mobiles Menü — obere CTA-Buttons */
+    .mob-cta-group { display: flex; flex-direction: column; gap: 0; padding: 20px 20px 0; }
+    .mob-action-btn { display: flex; align-items: center; gap: 14px; text-decoration: none; padding: 16px 18px; border-radius: 14px; margin-bottom: 10px; transition: opacity .18s; }
+    .mob-action-btn:active { opacity: .75; }
+    .mob-action-btn.primary { background: var(--rust); color: var(--white); }
+    .mob-action-btn.secondary { background: var(--sage-pale); color: var(--sage); }
+    .mob-action-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .mob-action-btn.secondary .mob-action-icon { background: rgba(90,133,96,0.18); }
+    .mob-action-label { font-size: 0.98rem; font-weight: 700; }
+    .mob-action-sub { font-size: 0.73rem; opacity: 0.72; display: block; margin-top: 1px; }
+    /* Mobiles Menü — untere Nav-Links */
+    .mob-nav-links { display: flex; flex-direction: column; margin: 16px 20px 0; border-top: 1px solid var(--rule); padding-top: 8px; }
+    .mob-nav-links a { color: var(--txt-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; padding: 12px 4px; border-bottom: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; }
+    .mob-nav-links a:last-child { border-bottom: none; }
+    .mob-nav-links a svg { opacity: 0.3; }
+    /* Mobiles Menü — Telefon-Footer */
+    .mob-phone-row { margin: 16px 20px 28px; display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--txt-mid); font-size: 0.84rem; }
+    .mob-phone-row svg { color: var(--rust); }
     .mob-cta-m { margin-top: 20px !important; background: var(--rust) !important; color: white !important; text-align: center !important; padding: 15px !important; border-radius: 100px !important; border: none !important; font-weight: 700 !important; }
 
     /* ── HERO ── */
@@ -122,23 +141,24 @@
 
     /* ── ÄRZTINNEN ── */
     .team-section { background: var(--sage-pale); }
-    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 820px; }
-    .team-member { text-align: center; }
-    .team-photo-wrap { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; border: 5px solid rgba(90,133,96,0.35); box-shadow: 0 8px 28px rgba(0,0,0,0.09); }
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 860px; }
+    .team-member { text-align: center; background: white; border-radius: 20px; padding: 32px 20px 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); border: 1px solid rgba(90,133,96,0.1); transition: transform .2s, box-shadow .2s; }
+    .team-member:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.09); }
+    .team-photo-wrap { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; border: 4px solid rgba(90,133,96,0.3); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
     .team-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
     .team-name { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-    .team-role { font-size: 0.77rem; color: var(--rust); font-weight: 600; margin-bottom: 12px; }
+    .team-role { font-size: 0.77rem; color: var(--rust); font-weight: 600; margin-bottom: 14px; }
     .team-langs { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
-    .lang-chip { background: var(--sage-pale); color: var(--sage); font-size: 0.69rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+    .lang-chip { background: var(--sage-pale); color: var(--sage); font-size: 0.69rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; border: 1px solid rgba(90,133,96,0.2); }
 
     /* ── MITARBEITERINNEN ── */
     .staff-section { background: var(--warm); border-top: 1px solid var(--rule); }
-    .staff-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px 20px; }
+    .staff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; max-width: 700px; }
     .staff-member { text-align: center; }
-    .staff-photo-wrap { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; margin: 0 auto 12px; border: 3px solid var(--sand); }
+    .staff-photo-wrap { width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 14px; border: 3px solid var(--sand); box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
     .staff-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .staff-name { font-size: 0.84rem; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
-    .staff-role { font-size: 0.72rem; color: var(--txt-mid); line-height: 1.4; }
+    .staff-name { font-size: 0.86rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+    .staff-role { font-size: 0.73rem; color: var(--txt-mid); line-height: 1.45; }
 
     /* ── PRAXIS GALERIE ── */
     .praxis-gallery { overflow: hidden; }
@@ -199,14 +219,18 @@
     #oz-badge .bz-greet { color: var(--txt-mid); font-weight: 400; margin-left: 2px; }
 
     /* ── FOOTER ── */
-    footer { background: var(--dark); padding: 40px; }
-    .foot-top { display: flex; justify-content: space-between; align-items: center; }
-    .foot-name { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .foot-sub { font-size: 0.78rem; color: rgba(255,255,255,0.38); margin-bottom: 3px; }
-    .foot-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
-    .foot-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
-    .foot-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.8rem; transition: color .2s; }
+    footer { background: var(--dark); padding: 40px 40px 32px; }
+    .foot-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    .foot-name { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .foot-sub { font-size: 0.79rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 2px; }
+    .foot-copy { font-size: 0.7rem; color: rgba(255,255,255,0.22); margin-top: 10px; }
+    .foot-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
+    .foot-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+    .foot-links a { color: rgba(255,255,255,0.42); text-decoration: none; font-size: 0.78rem; transition: color .2s; }
     .foot-links a:hover { color: var(--sage); }
+    .foot-contact-row { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+    .foot-contact-row a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.8rem; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .foot-contact-row a:hover { color: var(--white); }
 
     /* ── RESPONSIVE ── */
 
@@ -239,11 +263,14 @@
       /* Öffnungszeiten */
       .oz-grid { grid-template-columns: 1fr; }
       /* Team */
-      .team-grid { gap: 20px; }
+      .team-grid { gap: 20px; grid-template-columns: repeat(3, 1fr); }
+      .team-member { padding: 24px 16px 20px; }
       /* Staff */
       .staff-grid { grid-template-columns: repeat(3, 1fr); }
       /* Footer */
       .foot-top { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .foot-right { align-items: flex-start; }
+      .foot-contact-row { justify-content: flex-start; }
       .foot-links { justify-content: flex-start; }
     }
 
@@ -251,6 +278,7 @@
     @media (max-width: 767px) {
       nav { padding: 0 20px; height: 56px; }
       .nav-links { display: none; }
+      .nav-portrait { display: block; }
       .burger { display: flex; }
       .mob-menu { top: 56px; }
       html { scroll-padding-top: 56px; }
@@ -270,10 +298,11 @@
       .lang-item { padding: 6px 12px; font-size: 0.84rem; }
       .lang-bg-num { display: none; }
       /* Team */
-      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 100%; }
-      .team-photo-wrap { width: 130px; height: 130px; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 100%; }
+      .team-member { padding: 22px 14px 18px; }
+      .team-photo-wrap { width: 110px; height: 110px; }
       /* Staff */
-      .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 16px 12px; }
+      .staff-grid { grid-template-columns: repeat(3, 1fr); gap: 20px 14px; }
       /* Galerie */
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-img { height: 200px; }
@@ -283,6 +312,8 @@
       .oz-grid { grid-template-columns: 1fr; }
       /* Footer */
       .foot-top { flex-direction: column; gap: 20px; align-items: flex-start; }
+      .foot-right { align-items: flex-start; }
+      .foot-contact-row { justify-content: flex-start; }
       .foot-links { flex-wrap: wrap; gap: .6rem 1.2rem; justify-content: flex-start; }
     }
 
@@ -313,10 +344,13 @@
       .lang-headline { font-size: 1.2rem; }
       .lang-item { padding: 5px 10px; font-size: 0.79rem; }
       /* Team */
-      .team-grid { grid-template-columns: 1fr; gap: 28px; }
-      .team-photo-wrap { width: 140px; height: 140px; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .team-member { padding: 20px 12px 16px; }
+      .team-photo-wrap { width: 100px; height: 100px; }
+      .team-name { font-size: 0.9rem; }
       /* Staff */
-      .staff-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 10px; }
+      .staff-grid { grid-template-columns: repeat(2, 1fr); gap: 16px 12px; }
+      .staff-photo-wrap { width: 80px; height: 80px; }
       .staff-photo-wrap { width: 80px; height: 80px; }
       /* Galerie */
       .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
@@ -354,11 +388,13 @@
       .lang-item { padding: 4px 8px; font-size: 0.75rem; }
       .lang-headline { font-size: 1.08rem; }
       /* Team */
-      .team-photo-wrap { width: 120px; height: 120px; }
+      .team-grid { gap: 10px; }
+      .team-member { padding: 16px 10px 14px; }
+      .team-photo-wrap { width: 88px; height: 88px; }
       .lang-chip { font-size: 0.63rem; padding: 2px 7px; }
       /* Staff */
-      .staff-grid { grid-template-columns: repeat(2, 1fr); gap: 12px 8px; }
-      .staff-photo-wrap { width: 70px; height: 70px; }
+      .staff-grid { grid-template-columns: repeat(2, 1fr); gap: 14px 10px; }
+      .staff-photo-wrap { width: 72px; height: 72px; }
       .staff-name { font-size: 0.78rem; }
       .staff-role { font-size: 0.67rem; }
       /* Galerie — 1 Spalte auf winzigen Screens */
@@ -410,17 +446,57 @@
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="nav-cta">Termin buchen</a></li>
     </ul>
-    <button class="burger" id="burger" onclick="toggleMenu()">
+    <!-- Portrait nur mobil sichtbar -->
+    <img class="nav-portrait" src="https://www.dr-juchert.de/wp-content/uploads/Juchert_Natascha_sw_web.jpg" alt="Dr. Juchert" />
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <!-- MOBILES MENÜ -->
   <div class="mob-menu" id="mobMenu">
-    <a href="#team">Team</a>
-    <a href="#leistungen">Leistungen</a>
-    <a href="#sprechzeiten">Sprechzeiten</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="tel:089751208">089 / 75 12 08</a>
-    <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="mob-cta-m">Termin online buchen</a>
+    <!-- Primäre CTAs -->
+    <div class="mob-cta-group">
+      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="mob-action-btn primary" onclick="closeMenu()">
+        <div class="mob-action-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+        </div>
+        <div>
+          <span class="mob-action-label">Termin buchen</span>
+          <span class="mob-action-sub">Online über Doctolib</span>
+        </div>
+      </a>
+      <a href="#" class="mob-action-btn secondary" onclick="closeMenu(); document.getElementById('praxis-widget-btn') && document.getElementById('praxis-widget-btn').click();">
+        <div class="mob-action-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <span class="mob-action-label">Rezept bestellen</span>
+          <span class="mob-action-sub">Online-Rezeption</span>
+        </div>
+      </a>
+      <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank" class="mob-action-btn secondary" onclick="closeMenu()">
+        <div class="mob-action-icon">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <div>
+          <span class="mob-action-label">Videosprechstunde</span>
+          <span class="mob-action-sub">Arztgespräch von zu Hause</span>
+        </div>
+      </a>
+    </div>
+    <!-- Sekundäre Nav-Links -->
+    <div class="mob-nav-links">
+      <a href="#team" onclick="closeMenu()">Unser Team <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#leistungen" onclick="closeMenu()">Leistungen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#sprechzeiten" onclick="closeMenu()">Sprechzeiten <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#kontakt" onclick="closeMenu()">Kontakt <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </div>
+    <!-- Telefon -->
+    <a href="tel:089751208" class="mob-phone-row" onclick="closeMenu()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.15-1.15a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      089 / 75 12 08
+    </a>
   </div>
 
   <!-- HERO -->
@@ -739,19 +815,27 @@
     <div class="foot-top">
       <div>
         <div class="foot-name">Dr. med. Natascha Juchert</div>
-        <div class="foot-sub">Hausarztpraxis Forstenried · Fritz-Baer-Straße 1 · 81476 München</div>
+        <div class="foot-sub">Hausarztpraxis Forstenried<br>Fritz-Baer-Straße 1 · 81476 München</div>
         <div class="foot-copy">© 2026 · Alle Rechte vorbehalten</div>
       </div>
-      <div class="foot-links">
-        <a href="#team">Team</a>
-        <a href="#leistungen">Leistungen</a>
-        <a href="#sprechzeiten">Sprechzeiten</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
+      <div class="foot-right">
+        <div class="foot-contact-row">
+          <a href="tel:089751208">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.15-1.15a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            089 / 75 12 08
+          </a>
+          <a href="https://www.doctolib.de/gemeinschaftspraxis/muenchen/allgemeinmedizinische-hausarzt-praxis-dr-med-natascha-juchert" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Termin buchen
+          </a>
+        </div>
+        <div class="foot-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
       </div>
     </div>
-    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;">
+    <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;">
       <span onclick="window.open('https://praxisecht.de','_blank')" style="font-size:0.65rem;color:rgba(255,255,255,0.22);cursor:pointer;letter-spacing:.03em;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.22)'">Webseite von Alexander Mäding</span>
     </div>
   </footer>
@@ -1280,6 +1364,7 @@
 
   <script>
     function toggleMenu() { document.getElementById('mobMenu').classList.toggle('open'); }
+    function closeMenu() { document.getElementById('mobMenu').classList.remove('open'); }
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('mobMenu');
       const burger = document.getElementById('burger');
