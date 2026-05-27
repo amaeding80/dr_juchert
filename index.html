@@ -1276,6 +1276,9 @@
         document.getElementById('shNotfall').classList.remove('open');
         showFlow();
         setStep(0);
+        // Panel öffnen falls noch versteckt
+        var p = document.getElementById('shPanel');
+        if (p && p.hidden) { p.hidden = false; }
       },
 
       back: function() {
