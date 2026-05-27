@@ -1293,6 +1293,13 @@
         var def = flowDef();
         var container = document.getElementById('shFormFields');
         container.innerHTML = '';
+        // AU-Hinweis: nur für Folge-AU
+        if (SH.flow === 'au') {
+          var note = document.createElement('div');
+          note.style.cssText = 'background:#EBF4EC;border-left:3px solid #5A8560;border-radius:0 6px 6px 0;padding:.75rem 1rem;margin-bottom:1rem;font-size:.85rem;color:#374151;line-height:1.5;';
+          note.innerHTML = '<strong style="color:#1a2e22;">Nur für Folge-AU:</strong> Dieser Service gilt ausschließlich für die <strong>Verlängerung</strong> einer bestehenden Arbeitsunfähigkeit. Sind Sie <strong>zum ersten Mal erkrankt</strong>, ist ein Arzttermin erforderlich.';
+          container.appendChild(note);
+        }
         def.fields.forEach(function(f) {
           var wrap = document.createElement('div');
           wrap.className = 'sh-field';
