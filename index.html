@@ -1493,16 +1493,21 @@
       /* Nächste Öffnungszeit ermitteln */
       var next='';
       var days=['So','Mo','Di','Mi','Do','Fr','Sa'];
-      var nwd=wd, tries=0;
-      while(tries<7) {
-        nwd=(nwd+1)%7; tries++;
-        if (nwd===0||nwd===6) continue; /* Wochenende */
-        next='Öffnet '+days[nwd]+' um 08:00 Uhr';
-        break;
-      }
-      /* Nachmittagspause Di/Do – kommt die Abendsprechstunde noch? */
-      if ([2,4].indexOf(wd)!==-1&&cm>=mBis&&cm<aVon) {
+      /* 1) Öffnet heute noch vor der Frühsprechstunde? */
+      if (cm<mVon && [1,2,3,4,5].indexOf(wd)!==-1) {
+        next='Öffnet heute um 08:00 Uhr';
+      /* 2) Nachmittagspause Di/Do – Abendsprechstunde kommt noch? */
+      } else if ([2,4].indexOf(wd)!==-1&&cm>=mBis&&cm<aVon) {
         next='Öffnet heute wieder um 16:00 Uhr';
+      /* 3) Nächster Werktag */
+      } else {
+        var nwd=wd, tries=0;
+        while(tries<7) {
+          nwd=(nwd+1)%7; tries++;
+          if (nwd===0||nwd===6) continue;
+          next='Öffnet '+days[nwd]+' um 08:00 Uhr';
+          break;
+        }
       }
       show('closed','Geschlossen'+(next?' · '+next:''),'');
     }
