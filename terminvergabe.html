@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminvergabe & Rezeptbestellung – Dr. med. Natascha Juchert | Hausarztpraxis Forstenried</title>
+  <meta name="description" content="Termin online buchen oder anrufen, Rezept & Überweisung bestellen, AU anfordern – alle Wege zur Hausarztpraxis Forstenried Dr. Juchert.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #111f18;
+      --ink: #1a2e22;
+      --sage: #5A8560;
+      --sage-pale: #EBF4EC;
+      --rust: #8B3E22;
+      --rust-pale: #FAE8DF;
+      --rust-lt: #c97a5e;
+      --warm: #FDFAF6;
+      --white: #ffffff;
+      --sand: #e4ddd3;
+      --rule: rgba(0,0,0,0.07);
+      --txt: #374151;
+      --txt-mid: #6B7280;
+      --txt-light: #9CA3AF;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+    body { overflow-x: hidden; max-width: 100%; font-family: 'Plus Jakarta Sans', sans-serif; background: var(--warm); color: var(--txt); line-height: 1.7; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      padding: 0 40px; height: 68px;
+    }
+    .nav-brand { text-decoration: none; display: flex; flex-direction: column; }
+    .nav-name { font-size: .95rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .nav-sub { font-size: .75rem; color: var(--txt-mid); }
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links a { text-decoration: none; font-size: .88rem; font-weight: 500; color: var(--txt); transition: color .2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta {
+      background: var(--sage); color: var(--white) !important;
+      padding: .45rem 1.1rem; border-radius: 6px;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--ink) !important; }
+    .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .burger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: .25s; }
+    .mob-menu {
+      display: none; flex-direction: column; gap: .2rem;
+      position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+      background: var(--white); border-bottom: 1px solid var(--rule);
+      padding: 1rem 1.5rem 1.4rem;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { text-decoration: none; font-size: .95rem; font-weight: 500; color: var(--txt); padding: .55rem 0; border-bottom: 1px solid var(--rule); }
+    .mob-menu a:last-child { border-bottom: none; }
+    .mob-cta-m { background: var(--sage); color: var(--white) !important; text-align: center; border-radius: 6px; padding: .7rem 1rem !important; margin-top: .5rem; border-bottom: none !important; }
+
+    /* ── Content ── */
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 80px 40px 100px; }
+    .page-title { font-size: 2.2rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; line-height: 1.2; }
+    .page-intro { font-size: 1rem; color: var(--txt-mid); margin-bottom: 3rem; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; }
+    .s-tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--sage); background: var(--sage-pale);
+      border-radius: 4px; padding: .2rem .6rem; margin-bottom: .8rem;
+    }
+    .section { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--rule); }
+    .section:last-child { border-bottom: none; }
+    h2 { font-size: 1.35rem; font-weight: 700; color: var(--ink); margin-bottom: .9rem; line-height: 1.3; }
+    p { margin-bottom: .9rem; font-size: .96rem; }
+
+    /* ── Kanal-Karten ── */
+    .channel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .channel-card {
+      background: var(--white); border: 1.5px solid var(--rule);
+      border-radius: 14px; padding: 1.4rem 1.5rem;
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .channel-card.primary { border-color: var(--sage); background: var(--sage-pale); }
+    .channel-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--sage-pale); display: flex; align-items: center; justify-content: center;
+      margin-bottom: .3rem;
+    }
+    .channel-card.primary .channel-icon { background: rgba(90,133,96,.18); }
+    .channel-label { font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--sage); }
+    .channel-title { font-size: 1rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .channel-body { font-size: .88rem; color: var(--txt-mid); line-height: 1.55; }
+    .channel-action {
+      display: inline-flex; align-items: center; gap: .4rem;
+      margin-top: .5rem; font-size: .85rem; font-weight: 700;
+      color: var(--sage); text-decoration: none; cursor: pointer;
+    }
+    .channel-action:hover { text-decoration: underline; }
+
+    /* ── Info-Box ── */
+    .info-box {
+      background: var(--white); border: 1.5px solid var(--rule);
+      border-radius: 14px; padding: 1.4rem 1.5rem; margin-bottom: 1.5rem;
+    }
+    .info-box.amber { border-left: 4px solid #c4a06a; }
+    .info-box.sage  { border-left: 4px solid var(--sage); }
+    .info-box-title { font-size: .94rem; font-weight: 700; color: var(--ink); margin-bottom: .5rem; }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .info-list li { font-size: .9rem; color: var(--txt); display: flex; gap: .6rem; align-items: baseline; }
+    .info-list li::before { content: "–"; color: var(--sage); flex-shrink: 0; }
+
+    /* ── Wichtiger Hinweis ── */
+    .notice-bar {
+      background: #FFF8EE; border: 1.5px solid #e8c97a;
+      border-radius: 12px; padding: 1rem 1.2rem;
+      font-size: .88rem; color: #6b4f1a; margin-bottom: 1.5rem;
+      display: flex; gap: .7rem; align-items: flex-start;
+    }
+    .notice-bar svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ── */
+    footer { background: var(--ink); color: var(--white); padding: 2.5rem 40px; }
+    .foot-top { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+    .foot-name { font-size: 1rem; font-weight: 700; margin-bottom: .25rem; }
+    .foot-sub { font-size: .82rem; color: rgba(255,255,255,.6); margin-bottom: .2rem; }
+    .foot-copy { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: .5rem; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: center; }
+    .foot-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .82rem; transition: color .2s; }
+    .foot-links a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1023px) {
+      .page-wrap { padding: 60px 30px 80px; }
+    }
+    @media (max-width: 767px) {
+      nav { padding: 0 20px; height: 52px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .mob-menu { top: 52px; }
+      .page-wrap { padding: 44px 1.25rem 60px; }
+      .page-title { font-size: 1.65rem; }
+      footer { padding: 2rem 1.25rem; }
+      .foot-links { gap: .6rem 1.1rem; }
+      .channel-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 479px) {
+      .page-wrap { padding: 32px 1rem 48px; }
+      .page-title { font-size: 1.4rem; }
+      h2 { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a onclick="location.href='index.html'" style="cursor:pointer;" class="nav-brand">
+    <span class="nav-name">Dr. med. Natascha Juchert</span>
+    <span class="nav-sub">Hausarztpraxis Forstenried</span>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="location.href='index.html#team'" style="cursor:pointer;">Team</a></li>
+    <li><a onclick="location.href='index.html#leistungen'" style="cursor:pointer;">Leistungen</a></li>
+    <li><a onclick="location.href='index.html#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a></li>
+    <li><a onclick="location.href='index.html#kontakt'" style="cursor:pointer;">Kontakt</a></li>
+    <li><a data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank" class="nav-cta">Termin buchen</a></li>
+  </ul>
+  <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a onclick="location.href='index.html#team'" style="cursor:pointer;">Team</a>
+  <a onclick="location.href='index.html#leistungen'" style="cursor:pointer;">Leistungen</a>
+  <a onclick="location.href='index.html#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a>
+  <a onclick="location.href='terminvergabe.html'" style="cursor:pointer;">Terminvergabe</a>
+  <a onclick="location.href='index.html#kontakt'" style="cursor:pointer;">Kontakt</a>
+  <a href="tel:089751208">089 / 75 12 08</a>
+  <a data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank" class="mob-cta-m">Termin online buchen</a>
+</div>
+
+<!-- Content -->
+<main class="page-wrap">
+
+  <h1 class="page-title">Terminvergabe & Rezeptbestellung</h1>
+  <p class="page-intro">Alle Wege in die Praxis – Termin vereinbaren, Rezept bestellen, AU anfordern.</p>
+
+  <!-- 1. Termin -->
+  <div class="section">
+    <div class="s-tag">Termin</div>
+    <h2>Terminvereinbarung</h2>
+    <p>Um Wartezeiten kurz zu halten bitten wir Sie herzlich, möglichst mit Termin in die Praxis zu kommen. Auch für Blutabnahmen, Impfungen und Laboruntersuchungen ist ein Termin nötig.</p>
+    <p>Bitte beschreiben Sie Ihr Anliegen bei der Terminvereinbarung so genau wie möglich – das hilft uns bei der Planung und vermeidet Wartezeiten für alle.</p>
+
+    <div class="channel-grid">
+      <div class="channel-card primary">
+        <div class="channel-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A8560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="channel-label">Empfohlen</div>
+        <div class="channel-title">Online buchen via Doctolib</div>
+        <div class="channel-body">Rund um die Uhr verfügbar – schnell, einfach, ohne Wartezeit in der Leitung.</div>
+        <span class="channel-action" data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank">
+          Jetzt Termin buchen →
+        </span>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A8560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 5.88 5.88l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="channel-label">Telefonisch</div>
+        <div class="channel-title">Anruf in der Praxis</div>
+        <div class="channel-body">Mo, Mi, Fr 08:00–12:30 Uhr<br>Di, Do 08:00–12:30 · 16:00–18:00 Uhr</div>
+        <a class="channel-action" href="tel:089751208">089 / 75 12 08 →</a>
+      </div>
+    </div>
+
+    <div class="notice-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4a06a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span><strong>Notfälle</strong> werden zu jeder Zeit und sofort behandelt – kein Termin nötig.</span>
+    </div>
+  </div>
+
+  <!-- 2. Rezept & Überweisung -->
+  <div class="section">
+    <div class="s-tag">Rezept & Überweisung</div>
+    <h2>Rezept- und Überweisungsbestellung</h2>
+    <p>Rezepte und Überweisungen können Sie rund um die Uhr vorbestellen – bitte beachten Sie, dass Bestellungen nur während der Praxiszeiten bearbeitet werden und <strong>erst am nächsten Werktag ab 10:00 Uhr</strong> abgeholt werden können.</p>
+
+    <div class="channel-grid">
+      <div class="channel-card primary">
+        <div class="channel-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A8560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 1v2H8V3z"/><rect x="4" y="5" width="16" height="17" rx="1.5"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
+        </div>
+        <div class="channel-label">Online · 24 Std</div>
+        <div class="channel-title">Online-Rezeption</div>
+        <div class="channel-body">DSGVO-konform, sicher, jederzeit verfügbar. Empfohlen für Rezepte und Überweisungen.</div>
+        <span class="channel-action" data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank">
+          Zur Online-Rezeption →
+        </span>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A8560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 5.88 5.88l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="channel-label">24h Hotline</div>
+        <div class="channel-title">Rezepttelefon</div>
+        <div class="channel-body">Sprechen Sie auf den Anrufbeantworter – rund um die Uhr erreichbar.</div>
+        <a class="channel-action" href="tel:089751208">089 / 75 12 08 →</a>
+      </div>
+    </div>
+
+    <div class="info-box sage">
+      <div class="info-box-title">Was Sie beim Anruf angeben müssen:</div>
+      <ul class="info-list">
+        <li>Name und Vorname</li>
+        <li>Geburtsdatum</li>
+        <li>Name des Medikaments, Wirkstärke und Packungsgröße</li>
+        <li>Bei Überweisungen: Fachrichtung des Arztes</li>
+      </ul>
+    </div>
+
+    <div class="info-box amber">
+      <div class="info-box-title">📬 Bestellzettel einwerfen</div>
+      <p style="margin:0;font-size:.9rem;color:var(--txt-mid);">Sie können Ihren Wunsch auch auf einem Zettel in den Briefkasten der Praxis einwerfen. Abholung ebenfalls am nächsten Werktag ab 10:00 Uhr.</p>
+    </div>
+
+    <div class="notice-bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4a06a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span><strong>E-Mails werden nicht mehr bearbeitet</strong> – aus Datenschutzgründen. Bitte nutzen Sie die Online-Rezeption, das Telefon oder den Briefkasten.</span>
+    </div>
+  </div>
+
+  <!-- 3. AU -->
+  <div class="section">
+    <div class="s-tag">Arbeitsunfähigkeit</div>
+    <h2>AU-Bescheinigung anfordern</h2>
+    <p>Für eine <strong>Folge-AU</strong> (Verlängerung einer bestehenden Arbeitsunfähigkeit) wenden Sie sich bitte an die Online-Rezeption oder rufen Sie uns an. Bei einer <strong>erstmaligen Erkrankung</strong> ist ein Arzttermin erforderlich – bitte vereinbaren Sie diesen über Doctolib oder telefonisch.</p>
+
+    <div class="channel-grid">
+      <div class="channel-card primary">
+        <div class="channel-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A8560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l1 1v2H8V3z"/><rect x="4" y="5" width="16" height="17" rx="1.5"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
+        </div>
+        <div class="channel-label">Folge-AU · Online</div>
+        <div class="channel-title">Online-Rezeption</div>
+        <div class="channel-body">Beschreiben Sie Ihre Situation kurz – wir melden uns schnellstmöglich.</div>
+        <span class="channel-action" data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank">
+          Zur Online-Rezeption →
+        </span>
+      </div>
+      <div class="channel-card">
+        <div class="channel-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5A8560" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="channel-label">Ersterkrankung · Termin</div>
+        <div class="channel-title">Termin vereinbaren</div>
+        <div class="channel-body">Bei neuer Erkrankung ist ein persönlicher Termin nötig.</div>
+        <span class="channel-action" data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank">
+          Termin buchen →
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Kontakt -->
+  <div class="section">
+    <div class="s-tag">Kontakt</div>
+    <h2>Direkte Kontaktdaten</h2>
+    <div class="info-box">
+      <ul class="info-list">
+        <li><strong>Telefon:</strong> <a href="tel:089751208" style="color:var(--sage);">089 / 75 12 08</a></li>
+        <li><strong>Fax:</strong> 089 / 75 46 73</li>
+        <li><strong>Adresse:</strong> Fritz-Baer-Straße 1, 81476 München</li>
+        <li><strong>Abholung:</strong> nächster Werktag ab 10:00 Uhr</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-name">Dr. med. Natascha Juchert</div>
+      <div class="foot-sub">Hausarztpraxis Forstenried · Fritz-Baer-Straße 1 · 81476 München</div>
+      <div class="foot-copy">© 2026 · <span onclick="window.open('https://praxisecht.de','_blank')" style="cursor:pointer;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color=''">Webseite von Alexander Mäding</span></div>
+    </div>
+    <div class="foot-links">
+      <a onclick="location.href='index.html#team'" style="cursor:pointer;">Team</a>
+      <a onclick="location.href='index.html#leistungen'" style="cursor:pointer;">Leistungen</a>
+      <a onclick="location.href='index.html#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a>
+      <a onclick="location.href='terminvergabe.html'" style="cursor:pointer;">Terminvergabe</a>
+      <a onclick="location.href='impressum.html'" style="cursor:pointer;">Impressum</a>
+      <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('mobMenu');
+    m.classList.toggle('open');
+  }
+  document.querySelectorAll('.mob-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('mobMenu').classList.remove('open');
+    });
+  });
+  // data-u Link-Handler
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[data-u], span[data-u]');
+    if (a) { e.preventDefault(); window.open(atob(a.getAttribute('data-u')), '_blank', 'noopener'); }
+  });
+</script>
+
+</body>
+</html>
