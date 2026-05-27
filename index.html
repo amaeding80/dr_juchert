@@ -491,16 +491,16 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#sprechzeiten" class="nav-brand">
+    <a onclick="location.href='#sprechzeiten'" style="cursor:pointer;" class="nav-brand">
       <span class="nav-name">Dr. med. Natascha Juchert</span>
       <span class="nav-sub">Hausarztpraxis Forstenried</span>
       <span id="oz-badge"><span class="bz-dot"></span><span id="bz-text"></span><span id="bz-greet" class="bz-greet"></span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#team">Team</a></li>
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#sprechzeiten">Sprechzeiten</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a onclick="location.href='#team'" style="cursor:pointer;">Team</a></li>
+      <li><a onclick="location.href='#leistungen'" style="cursor:pointer;">Leistungen</a></li>
+      <li><a onclick="location.href='#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a></li>
+      <li><a onclick="location.href='#kontakt'" style="cursor:pointer;">Kontakt</a></li>
       <li><a target="_blank" class="nav-cta" onclick="goDL(event)">Termin buchen</a></li>
     </ul>
     <img class="nav-portrait" src="https://www.dr-juchert.de/wp-content/uploads/Juchert_Natascha_sw_web.jpg" alt="Dr. med. Natascha Juchert" />
@@ -511,13 +511,13 @@
 
   <!-- MOBILES MENÜ -->
   <div class="mob-menu" id="mobMenu">
-    <a href="#team" onclick="closeMenu()">Team <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
-    <a href="#leistungen" onclick="closeMenu()">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
-    <a href="#sprechzeiten" onclick="closeMenu()">Sprechzeiten <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
-    <a href="#kontakt" onclick="closeMenu()">Kontakt <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a onclick="location.href='#team'" style="cursor:pointer;" onclick="closeMenu()">Team <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a onclick="location.href='#leistungen'" style="cursor:pointer;" onclick="closeMenu()">Leistungen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a onclick="location.href='#sprechzeiten'" style="cursor:pointer;" onclick="closeMenu()">Sprechzeiten <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a onclick="location.href='#kontakt'" style="cursor:pointer;" onclick="closeMenu()">Kontakt <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
     <div class="mob-divider"></div>
     <a target="_blank" class="mob-cta-link" onclick="goDL(event);closeMenu()">Termin buchen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
-    <a href="#" class="mob-cta-link" onclick="closeMenu()">Rezept bestellen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+    <a onclick="location.href='#'" style="cursor:pointer;" class="mob-cta-link" onclick="closeMenu()">Rezept bestellen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
     <a target="_blank" class="mob-cta-link" onclick="goDL(event);closeMenu()">Videosprechstunde <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
     <div class="mob-divider"></div>
     <a href="tel:089751208" onclick="closeMenu()">089 / 75 12 08 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.09 6.09l1.15-1.15a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
@@ -566,7 +566,7 @@
         <span class="ss-label">Termin buchen</span>
         <span class="ss-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
       </a>
-      <a href="#" class="ss-item">
+      <a onclick="location.href='#'" style="cursor:pointer;" class="ss-item">
         <div class="ss-icon-sm">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
@@ -854,8 +854,8 @@
           </a>
         </div>
         <div class="foot-links">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
+          <a onclick="location.href='impressum.html'" style="cursor:pointer;">Impressum</a>
+          <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutz</a>
           <button class="foot-cookie-btn" onclick="CK.openModal()">Cookie-Einstellungen</button>
         </div>
       </div>
@@ -1617,7 +1617,7 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4"/><circle cx="8.5" cy="8.5" r=".5" fill="var(--sage)"/><circle cx="16" cy="15.5" r=".5" fill="var(--sage)"/><circle cx="12" cy="12" r=".5" fill="var(--sage)"/></svg>
       </div>
       <div class="ck-title">Wir verwenden Cookies &amp; externe Dienste</div>
-      <div class="ck-lead">Diese Website nutzt technisch notwendige Speicher sowie optionale externe Dienste (Google Fonts). Sie entscheiden, was Sie erlauben. Details finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</div>
+      <div class="ck-lead">Diese Website nutzt technisch notwendige Speicher sowie optionale externe Dienste (Google Fonts). Sie entscheiden, was Sie erlauben. Details finden Sie in unserer <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutzerklärung</a>.</div>
       <div class="ck-btns">
         <button class="ck-all" onclick="CK.acceptAll()">Alle akzeptieren</button>
         <button class="ck-nec" onclick="CK.acceptNecessary()">Nur notwendige</button>
@@ -1634,7 +1634,7 @@
         <button class="ck-mclose" onclick="CK.closeModal()" aria-label="Schließen">✕</button>
       </div>
       <div class="ck-mbody">
-        <p class="ck-mintro">Sie können hier festlegen, welche Arten von Cookies und externen Diensten diese Website verwenden darf. Technisch notwendige Funktionen sind immer aktiv. Weitere Informationen: <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        <p class="ck-mintro">Sie können hier festlegen, welche Arten von Cookies und externen Diensten diese Website verwenden darf. Technisch notwendige Funktionen sind immer aktiv. Weitere Informationen: <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutzerklärung</a>.</p>
 
         <!-- 1. Notwendig -->
         <div class="ck-cat">

@@ -129,24 +129,24 @@
 
 <!-- Nav -->
 <nav>
-  <a href="index.html" class="nav-brand">
+  <a onclick="location.href='index.html'" style="cursor:pointer;" class="nav-brand">
     <span class="nav-name">Dr. med. Natascha Juchert</span>
     <span class="nav-sub">Hausarztpraxis Forstenried</span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#team">Team</a></li>
-    <li><a href="index.html#leistungen">Leistungen</a></li>
-    <li><a href="index.html#sprechzeiten">Sprechzeiten</a></li>
-    <li><a href="index.html#kontakt">Kontakt</a></li>
+    <li><a onclick="location.href='index.html#team'" style="cursor:pointer;">Team</a></li>
+    <li><a onclick="location.href='index.html#leistungen'" style="cursor:pointer;">Leistungen</a></li>
+    <li><a onclick="location.href='index.html#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a></li>
+    <li><a onclick="location.href='index.html#kontakt'" style="cursor:pointer;">Kontakt</a></li>
     <li><a data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank" class="nav-cta">Termin buchen</a></li>
   </ul>
   <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html#team">Team</a>
-  <a href="index.html#leistungen">Leistungen</a>
-  <a href="index.html#sprechzeiten">Sprechzeiten</a>
-  <a href="index.html#kontakt">Kontakt</a>
+  <a onclick="location.href='index.html#team'" style="cursor:pointer;">Team</a>
+  <a onclick="location.href='index.html#leistungen'" style="cursor:pointer;">Leistungen</a>
+  <a onclick="location.href='index.html#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a>
+  <a onclick="location.href='index.html#kontakt'" style="cursor:pointer;">Kontakt</a>
   <a href="tel:089751208">089 / 75 12 08</a>
   <a data-u="aHR0cHM6Ly93d3cuZG9jdG9saWIuZGUvZ2VtZWluc2NoYWZ0c3ByYXhpcy9tdWVuY2hlbi9hbGxnZW1laW5tZWRpemluaXNjaGUtaGF1c2FyenQtcHJheGlzLWRyLW1lZC1uYXRhc2NoYS1qdWNoZXJ0" target="_blank" class="mob-cta-m">Termin online buchen</a>
 </div>
@@ -308,12 +308,12 @@
       <div class="foot-copy">© 2026 · <span onclick="window.open('https://praxisecht.de','_blank')" style="cursor:pointer;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,0.55)'" onmouseout="this.style.color=''">Webseite von Alexander Mäding</span></div>
     </div>
     <div class="foot-links">
-      <a href="index.html#team">Team</a>
-      <a href="index.html#leistungen">Leistungen</a>
-      <a href="index.html#sprechzeiten">Sprechzeiten</a>
-      <a href="index.html#kontakt">Kontakt</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <a onclick="location.href='index.html#team'" style="cursor:pointer;">Team</a>
+      <a onclick="location.href='index.html#leistungen'" style="cursor:pointer;">Leistungen</a>
+      <a onclick="location.href='index.html#sprechzeiten'" style="cursor:pointer;">Sprechzeiten</a>
+      <a onclick="location.href='index.html#kontakt'" style="cursor:pointer;">Kontakt</a>
+      <a onclick="location.href='impressum.html'" style="cursor:pointer;">Impressum</a>
+      <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutz</a>
     </div>
   </div>
 </footer>
@@ -420,7 +420,7 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4"/><circle cx="8.5" cy="8.5" r=".5" fill="var(--sage)"/><circle cx="16" cy="15.5" r=".5" fill="var(--sage)"/><circle cx="12" cy="12" r=".5" fill="var(--sage)"/></svg>
       </div>
       <div class="ck-title">Wir verwenden Cookies &amp; externe Dienste</div>
-      <div class="ck-lead">Diese Website nutzt technisch notwendige Speicher sowie optionale externe Dienste (Google Fonts). Sie entscheiden, was Sie erlauben. Details finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</div>
+      <div class="ck-lead">Diese Website nutzt technisch notwendige Speicher sowie optionale externe Dienste (Google Fonts). Sie entscheiden, was Sie erlauben. Details finden Sie in unserer <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutzerklärung</a>.</div>
       <div class="ck-btns">
         <button class="ck-all" onclick="CK.acceptAll()">Alle akzeptieren</button>
         <button class="ck-nec" onclick="CK.acceptNecessary()">Nur notwendige</button>
@@ -437,7 +437,7 @@
         <button class="ck-mclose" onclick="CK.closeModal()" aria-label="Schließen">✕</button>
       </div>
       <div class="ck-mbody">
-        <p class="ck-mintro">Sie können hier festlegen, welche Arten von Cookies und externen Diensten diese Website verwenden darf. Technisch notwendige Funktionen sind immer aktiv. Weitere Informationen: <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        <p class="ck-mintro">Sie können hier festlegen, welche Arten von Cookies und externen Diensten diese Website verwenden darf. Technisch notwendige Funktionen sind immer aktiv. Weitere Informationen: <a onclick="location.href='datenschutz.html'" style="cursor:pointer;">Datenschutzerklärung</a>.</p>
         <!-- 1. Notwendig -->
         <div class="ck-cat">
           <div class="ck-chead">
